@@ -4,6 +4,10 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
   <head>
+    {% load i18n %}
+    {% get_current_language as LANGUAGE_CODE %}
+    {% get_current_language_bidi as LANGUAGE_BIDI %}
+    
     {% load compress %}
     {% load staticfiles %}
     <meta charset="utf-8">
@@ -28,12 +32,20 @@
     <link rel="stylesheet" href="{% static 'components/angular-ui-select/dist/select.css' %}" media="all">
     <link rel="stylesheet" href="{% static 'components/jquery.tagsinput/jquery.tagsinput.css' %}" media="all">
     <link rel="stylesheet" href="{% static 'kobo.compiled/kobo.css' %}" media="all">
-
+    
+    {% with 'css/i18n_'|add:LANGUAGE_CODE|add:'.css' as i18n_css %}
+      <link rel="stylesheet" href="{% static i18n_css %}" media="all">
+    {% endwith %}
+    {% if LANGUAGE_BIDI %}
+      <link rel="stylesheet" href="{% static 'css/rtl.css' %}" media="all">
+    {% endif %}
     {% endcompress %}
 
     <script src="{% static 'kobo.compiled/modernizr.js' %}"></script>
 
     <script src="{% static 'components/jquery/dist/jquery.js' %}"></script>
+
+    <script type="text/javascript" src="{% url 'django.views.i18n.javascript_catalog' %}"></script>
 
     {% compress js %}
       <script src="{% static 'components/jquery-migrate/jquery-migrate.js' %}"></script>
@@ -67,6 +79,7 @@
       <script src="{% static 'components/angular-resource/angular-resource.js' %}"></script>
       <script src="{% static 'components/angular-route/angular-route.js' %}"></script>
       <script src="{% static 'components/angular-ui-utils/ui-utils.js' %}"></script>
+      <script src="{% static 'components/angular-gettext/dist/angular-gettext.js' %}"></script>
       <script src="{% static 'components/select2/select2.js' %}"></script>
 
       <script src="{% static 'components/jquery.scrollTo/jquery.scrollTo.js' %}"></script>
@@ -122,6 +135,13 @@
     <script src="{% static 'kobo/controllers/AssetEditor.Controller.js' %}"></script>
     <script src="{% static 'kobo/controllers/Import.Controller.js' %}"></script>
     <script src="{% static 'kobo/app_run.js' %}"></script>
+    
+    <script src="{% static 'kobo/translations.js' %}"></script>
+    <script type="text/javascript">
+        angular.module('dkobo').run(function (gettextCatalog) {
+            gettextCatalog.setCurrentLanguage('{{ LANGUAGE_CODE }}');
+        });
+    </script>
 
     {% endcompress %}
 

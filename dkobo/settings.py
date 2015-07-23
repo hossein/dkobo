@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 """
 Django settings for dkobo project.
 
@@ -179,6 +181,16 @@ POSTGIS_VERSION = (2, 0, 3)
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
+
+LANGUAGES = (
+    ('en', u'English'),
+    ('fa', u'فارسی'),
+)
+
+LOCALE_PATHS = (os.path.join(BASE_DIR, 'dkobo.koboform', 'locale'),
+                os.path.join(BASE_DIR, 'jsapp', 'locale'), )
+
+ugettext = lambda s: s
 
 TIME_ZONE = 'UTC'
 

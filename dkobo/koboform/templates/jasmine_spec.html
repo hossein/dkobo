@@ -2,6 +2,9 @@
 {% block title %}Jasmine Spec{% endblock %}
 {% load staticfiles %}
 {% load compress %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_current_language_bidi as LANGUAGE_BIDI %}
 {% block head %}
   <link rel="stylesheet" href="{% static 'components/jasmine/lib/jasmine-core/jasmine.css' %}" />
   <script src="{% static 'components/jasmine/lib/jasmine-core/jasmine.js' %}"></script>
@@ -18,6 +21,8 @@
   <script src="{% static 'js/jquery-ui-1.10.4.custom.js' %}"></script>
   <script src="{% static 'components/x-editable/dist/jquery-editable/js/jquery-editable-poshytip.js' %}"></script>
   <script src="{% static 'js/Backbone.Validation.js' %}"></script>
+
+  <script type="text/javascript" src="{% url 'django.views.i18n.javascript_catalog' %}"></script>
 
   <style type="text/css" media="screen">
   .test-div {
@@ -42,6 +47,12 @@
   {% endcompress %}
 
   <link rel="stylesheet" href="{% static 'kobo.compiled/kobo.css' %}">
+  {% with 'css/i18n_'|add:LANGUAGE_CODE|add:'.css' as i18n_css %}
+    <link rel="stylesheet" href="{% static i18n_css %}" media="all">
+  {% endwith %}
+  {% if LANGUAGE_BIDI %}
+    <link rel="stylesheet" href="{% static 'css/rtl.css' %}" media="all">
+  {% endif %}
 
   <script src="{% static 'components/requirejs/require.js' %}"></script>
 {% endblock %}

@@ -38,3 +38,9 @@ dkobo.v12.suo
 
 dkobo/static/js/*.html
 npm-debug.log
+
+*.mo
+*.pot
+jsapp/locale/angular-gettext/LC_MESSAGES
+jsapp/kobo/translations.js
+

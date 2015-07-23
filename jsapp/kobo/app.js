@@ -19,7 +19,8 @@ var kobo = angular.module('dkobo', [
     'ngResource',
     'ui.utils',
     'ui.select',
-    'ngSanitize'
+    'ngSanitize',
+    'gettext'
 ]);
 
 kobo.filter('propsFilter', function() {

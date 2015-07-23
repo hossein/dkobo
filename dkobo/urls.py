@@ -39,4 +39,6 @@ urlpatterns = patterns(
     url(r'^import_questions$', 'dkobo.koboform.views.survey_draft_views.import_questions'),
     url(r'^forms/(?P<id>\d+)', 'dkobo.koboform.views.export_form'),
     url(r'^assets/(\d+)', 'dkobo.koboform.views.export_form'),
+    # i18n
+    url(r'^jsi18n/$', 'django.views.i18n.javascript_catalog', {'packages': ('dkobo.koboform',)}),
 )

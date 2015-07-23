@@ -8,11 +8,11 @@ module.exports = function(grunt) {
             sourceChanged: {
                 files: ['jsapp/kobo/**/*.js', 'jsapp/kobo/**/*.coffee', 'jsapp/kobo/**/*.html',
                         'jsapp/xlform_model_view/*.coffee', 'jsapp/xlform_model_view/*.js'],
-                options: { livereload: true },
+                options: { livereload: 35730 },
             },
 
             htmlChanged: {
-                options: { livereload: true },
+                options: { livereload: 35730 },
                 files: ['dkobo/koboform/templates/jasmine_spec.html'],
             },
 
@@ -35,7 +35,7 @@ module.exports = function(grunt) {
              */
             retestXlform: {
                 files: ['jsapp/test/xlform/*.coffee'],
-                options: { livereload: true },
+                options: { livereload: 35730 },
             },
 
             rebuildDkoboXlform: {
@@ -55,12 +55,61 @@ module.exports = function(grunt) {
             // cssChanged: {
                 // files: ['jsapp/kobo.compiled/*.css', '!jsapp/**/*.verbose.css'],
                 // tasks: [],
-                // options: { livereload: true },
+                // options: { livereload: 35730 },
             // },
             livereload: {
-              options: { livereload: true },
+              options: { livereload: 35730 },
               files: ['jsapp/kobo.compiled/*.css', '!jsapp/**/*.verbose.css'],
             },
+
+            /** Changes to HTML template files updates po files, and 
+             *  changes to po files must compile the mo files.
+             *  This uses django-admin makemessages command.
+             */
+            htmlTemplatesChanged: {
+                //options: { livereload: 35730 },
+                files: ['dkobo/koboform/templates/**/*.html'],
+                tasks: ['exec:makemessages_templates'],
+            },
+            htmlTemplatesPoChanged: {
+                //options: { livereload: 35730 },
+                files: ['dkobo/koboform/locale/**/*.po'],
+                tasks: ['exec:compilemessages_templates'],
+            },
+            /** Same as above for jsapp's compiled coffeescripts' language files,
+             *  This also uses `django-admin makemessages` command.
+             */
+            compiledXLFormChanged: {
+                //options: { livereload: 35730 },
+                files: ['jsapp/kobo.compiled/dkobo_xlform.js'],
+                tasks: ['exec:makemessages_xlformjs'],
+            },
+            compiledXLFormPoChanged: {
+                //options: { livereload: 35730 },
+                files: ['jsapp/locale/**/LC_MESSAGES/*.po', '!jsapp/locale/angular-gettext/*'],
+                tasks: ['exec:compilemessages_xlformjs'],
+            },
+            /** Extract strings from kobo/templates html templates.
+             *  This uses the grunt task associated with angular-gettext to extract .pot files,
+             *  then the user has to update .po files from the generated .pot file (we could mimick
+             *  `django-admin makemessages` to make this step automatic but we didn't),
+             *  then an angular-gettext grunt task again to compile them into `translations.js`.
+             */
+            JsAppAngularAppChanged: {
+                //options: { livereload: 35730 },
+                files: [
+                    'jsapp/kobo/templates/**/*.html', 
+                    'jsapp/kobo/controllers/**/*.js',
+                    'jsapp/kobo/directives/**/*.js',
+                    'jsapp/kobo/services/**/*.js'
+                ],
+                tasks: ['nggettext_extract:jsapp_angular_gettext_pot'],
+            },
+            JSAppAngularGetTextPoChanged: {
+                //options: { livereload: 35730 },
+                files: ['jsapp/locale/angular-gettext/*.po'], //Non-recursive
+                tasks: ['nggettext_compile:all'],
+            }
         },
         karma: {
             unit: {
@@ -178,6 +227,51 @@ module.exports = function(grunt) {
                 },
             }
 
+        },
+        exec: {
+            makemessages_templates: {
+                cwd: "./dkobo/koboform",
+                command: "django-admin.py makemessages -a",
+                stdout: true,
+                stderr: true
+            },
+            compilemessages_templates: {
+                cwd: "./dkobo/koboform",
+                command: "django-admin.py compilemessages",
+                stdout: true,
+                stderr: true
+            },
+            makemessages_xlformjs: {
+                cwd: "./jsapp",
+                command: "django-admin.py makemessages -a -d djangojs",
+                stdout: true,
+                stderr: true
+            },
+            compilemessages_xlformjs: {
+                cwd: "./jsapp",
+                command: "django-admin.py compilemessages",
+                stdout: true,
+                stderr: true
+            }
+        },
+        nggettext_extract: {
+            jsapp_angular_gettext_pot: {
+                files: {
+                    'jsapp/locale/angular-gettext/angular-gettext.pot': [
+                        'jsapp/kobo/templates/**/*.html',
+                        'jsapp/kobo/controllers/**/*.js',
+                        'jsapp/kobo/directives/**/*.js',
+                        'jsapp/kobo/services/**/*.js'
+                    ]
+                }
+            },
+        },
+        nggettext_compile: {
+            all: {
+                files: {
+                    'jsapp/kobo/translations.js': ['jsapp/locale/angular-gettext/*.po']
+                }
+            },
         }
     });
 
@@ -187,10 +281,13 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks("grunt-modernizr");
+    grunt.loadNpmTasks("grunt-exec");
+    grunt.loadNpmTasks('grunt-angular-gettext');
 
     grunt.registerTask('build', [
         'requirejs:compile_xlform',
         'build_css',
+        'make_i18n',
     ]);
     grunt.registerTask('build_all', [
         'build',
@@ -200,6 +297,14 @@ module.exports = function(grunt) {
         'sass:dist',
         'cssmin:strip_duplicates',
         'cssmin:dist',
+    ]);
+    grunt.registerTask('make_i18n', [
+        'exec:makemessages_templates',
+        'exec:compilemessages_templates',
+        'exec:makemessages_xlformjs',
+        'exec:compilemessages_xlformjs',
+        'nggettext_extract:jsapp_angular_gettext_pot',
+        'nggettext_compile:all',
     ]);
 
     grunt.registerTask('test', [
@@ -211,6 +316,7 @@ module.exports = function(grunt) {
     grunt.registerTask('develop', [
         'requirejs:compile_xlform',
         'build_css',
+        'make_i18n',
         'watch',
     ]);
 

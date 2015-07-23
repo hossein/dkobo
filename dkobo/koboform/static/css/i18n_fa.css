@@ -1,0 +1,37 @@
+/* ./partials/form_builder/_survey_row.scss */
+.scorelabel__name--automatic:before, .scorecell__name--automatic:before {
+    content: 'خودکار' !important;
+}
+.rank_items__name--automatic:before {
+    content: 'خودکار' !important;
+}
+
+/* ./partials/form_builder/_card.scss */
+.card__header.settings .card__header--shade span:after {
+    content: "تنظیمات" !important;
+}
+.card__header.delete .card__header--shade span:after {
+    content: "حذف پرسش" !important;
+}
+.card__header.duplicate .card__header--shade span:after {
+    content: "تکرار پرسش" !important;
+}
+.card__header.add-to-library .card__header--shade span:after {
+    content: "افزودن پرسش به کتابخانه" !important;
+}
+.placeholder:before {
+    content: "برای تغییر ترتیب، پرسش‌ها را بکشید و رها کنید. " !important;
+}
+
+/* ./partials/_icons.scss */
+.fa.fa-lato-text:before {
+    content: "ابجد";
+}
+
+/* ./pages/question_library.scss */
+.questions__question.ui-sortable-placeholder:after {
+    content: "پرسش را از کتابخانه‌ی سؤالات بکشید و آن را در فرم رها کنید تا اضافه شود." !important;
+}
+.question-filter .select2-choice > .select2-chosen:before, .tag-filter .select2-choice > .select2-chosen:before {
+    content: "مرتب‌سازی: " !important;
+}

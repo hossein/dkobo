@@ -82,5 +82,20 @@
     "white"         : false,    // true: Check against strict whitespace and indentation rules
 
     // Custom Globals
-    "globals"       : {}        // additional predefined global variables
+    // Note:
+    //   JSHint guys are currently deciding whether or not deprecate or use `predef` option;
+    //   We use "globals" here anyway. See the following and follow their links for info:
+    //   https://github.com/jshint/jshint/issues/1914
+    //   https://github.com/jshint/jshint/pull/2451
+    "globals": {
+        /* Django JS gettext functions as per Django 1.8 'Translation' docs */
+        "gettext"      : false,
+        "ngettext"     : false,
+        "interpolate"  : false,
+        "get_format"   : false,
+        "gettext_noop" : false,
+        "pgettext"     : false,
+        "npgettext"    : false,
+        "pluralidx"    : false
+    }
 }

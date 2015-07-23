@@ -1,0 +1,77 @@
+* { direction:rtl;}
+
+.forms__card__buttons {
+    border-width: 0 1px 0 0;
+    left: 0px;
+    right: inherit;
+}
+
+.forms__addform-wrapper {
+    left: 0px;
+    right: inherit;
+}
+
+.forms-header {
+    text-align: right;
+}
+
+.forms__addform__button
+{
+    text-align: right;
+}
+
+.questiontypelist__item i {
+    margin-left: 10px;
+}
+
+.top-level-menu {
+    right: -230px !important;
+    left: none !important;
+    transition: right 150ms ease 0s !important;
+}
+
+.top-level-menu.is-active {
+    right: 0px !important;
+    left: inherit !important;
+}
+
+.question-filter__filters .question-filter__searchbox , .tag-filter .tag-filter__searchbox {
+    padding: 8px 28px 8px 8px !important;
+}
+
+.fa-search {
+    margin-right: 8px !important;
+}
+
+.questions__question__edit-link {
+    left: 5px;
+    right: inherit;
+}
+
+.question__type {
+    padding: 7px 14px 7px 2px !important;
+}
+
+.registration__forgot {
+    left: 60px;
+    right: inherit;
+}
+
+.pull-right {
+    float: left;
+}
+
+.form__settings {
+    float: right;   
+}
+.multioptions__option code {
+  text-align: left;
+  float: right;
+}
+
+.no-touch .btn--addrow {
+	left: -55px;
+}
+.card__header.add-to-library .card__header--shade span:after{content:"افزودن به کتابخانه‌ی سؤالات"}
+
+
