@@ -1,0 +1,166 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-23 09:51+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: forms.py:10 templates/registration/login.html:25
+#: templates/registration/registration_form.html:37
+msgid "Username"
+msgstr ""
+
+#: forms.py:12
+msgid ""
+"A username may only contain lowercase letters, numbers, and underscores (_)."
+msgstr ""
+
+#: templates/base.html:16 templates/index.html:16
+msgctxt "Page Title"
+msgid "KoBoToolbox"
+msgstr ""
+
+#: templates/base.html:17 templates/index.html:18
+msgctxt "HTML Meta Description"
+msgid "KoBoToolbox Data Collecting Framework"
+msgstr ""
+
+#: templates/index.html:166
+msgid "Support"
+msgstr ""
+
+#: templates/registration/activate.html:10
+msgid ""
+"Sorry, we couldn't activate your account. The link we sent you has expired."
+msgstr ""
+
+#: templates/registration/activate.html:11
+msgid "Click here to create a new account."
+msgstr ""
+
+#: templates/registration/activate.html:15
+#: templates/registration/login.html:20
+#: templates/registration/password_reset_complete.html:18
+#: templates/registration/password_reset_confirm.html:25
+#: templates/registration/password_reset_done.html:14
+#: templates/registration/password_reset_form.html:17
+#: templates/registration/registration_complete.html:15
+#: templates/registration/registration_form.html:32
+msgctxt "Little text at the bottom of the page"
+msgid ""
+"<div class=\"registration__credit\"><a href=\"https://flic.kr/p/9v4mC5\" "
+"title=\"Muhkjar refugee camp\" target=\"_blank\">Photo</a> by UNAMID / <a "
+"href=\"https://creativecommons.org/licenses/by-nc-nd/2.0/\" target=\"_blank"
+"\">by-nc-nd</a></div>"
+msgstr ""
+
+#: templates/registration/login.html:10
+msgid "Forgot?"
+msgstr ""
+
+#: templates/registration/login.html:12
+msgid "Login"
+msgstr ""
+
+#: templates/registration/login.html:16
+msgctxt "Login *or* create account"
+msgid "or"
+msgstr ""
+
+#: templates/registration/login.html:16
+msgid "create an account"
+msgstr ""
+
+#: templates/registration/login.html:26
+#: templates/registration/registration_form.html:39
+msgid "Password"
+msgstr ""
+
+#: templates/registration/logout.html:5
+msgid "Logged out"
+msgstr ""
+
+#: templates/registration/password_reset_complete.html:10
+msgid "Password reset successfully"
+msgstr ""
+
+#: templates/registration/password_reset_complete.html:13
+msgid "Log in"
+msgstr ""
+
+#: templates/registration/password_reset_confirm.html:14
+msgid "Submit"
+msgstr ""
+
+#: templates/registration/password_reset_confirm.html:18
+msgid "Password reset failed"
+msgstr ""
+
+#: templates/registration/password_reset_done.html:10
+msgid "Email with password reset instructions has been sent."
+msgstr ""
+
+#: templates/registration/password_reset_form.html:12
+msgid "Cancel"
+msgstr ""
+
+#: templates/registration/password_reset_form.html:13
+msgid "Reset Password"
+msgstr ""
+
+#: templates/registration/password_reset_form.html:22
+#: templates/registration/registration_form.html:38
+msgid "Email"
+msgstr ""
+
+#: templates/registration/registration_complete.html:10
+msgid "Thanks for creating a KoBoToolbox account."
+msgstr ""
+
+#: templates/registration/registration_complete.html:11
+msgid "Please click the activation link in the email just sent to you."
+msgstr ""
+
+#: templates/registration/registration_form.html:13
+msgid "Create Account"
+msgstr ""
+
+#: templates/registration/registration_form.html:15
+msgctxt "Create Account *or* login"
+msgid "or"
+msgstr ""
+
+#: templates/registration/registration_form.html:15
+msgid "login"
+msgstr ""
+
+#: templates/registration/registration_form.html:23
+msgid ""
+"\n"
+"        <p>KoBoToolbox is an integrated set of tools for building forms and "
+"collecting interview responses. It is built by the Harvard Humanitarian "
+"Initiative for easy and reliable use in difficult field settings, such as "
+"humanitarian emergencies or post-conflict environments.</p> \n"
+"        <p>You can download and install KoBoToolbox on <a href=\"http://"
+"support.kobotoolbox.org/customer/portal/articles/1691108-install-kobotoolbox-"
+"on-your-own-server\">your own server</a> or <a href=\"http://support."
+"kobotoolbox.org/customer/portal/articles/1691105-using-kobotoolbox-offline"
+"\">on your own computer</a>.</p>\n"
+"        "
+msgstr ""
+
+#: templates/registration/registration_form.html:40
+msgid "Repeat Password"
+msgstr ""

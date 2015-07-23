@@ -13,9 +13,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>KoBoToolbox</title>
+    <title>{% trans "KoBoToolbox" context "Page Title" %} </title>
 
-    <meta name="description" content="">
+    <meta name="description" content="{% trans 'KoBoToolbox Data Collecting Framework' context 'HTML Meta Description' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{csrf_token}}">
 
@@ -163,7 +163,7 @@
             </a>
           </h1>
             <span class="header-bar__top-logo pull-right" ng-click="toggleBleedingEdge($event)"></span>
-            <a href="http://support.kobotoolbox.org/" class="header-bar__support pull-right" target="_blank" title="Visit our self-help pages or ask a support question (opens in new tab)">Support</a>
+            <a href="http://support.kobotoolbox.org/" class="header-bar__support pull-right" target="_blank" title="{% trans 'Visit our self-help pages or ask a support question (opens in new tab)' %}">{% endverbatim %}{% trans "Support" %}{% verbatim %}</a>
         </div>
       </header>
 

@@ -1,5 +1,6 @@
 {% extends "registration.html" %}
+{% load i18n %}
 
 {% block content %}
-  <p class="registration__message  registration__message--logged-out">Logged out</p>
+  <p class="registration__message  registration__message--logged-out">{% trans "Logged out" %}</p>
 {% endblock %}
