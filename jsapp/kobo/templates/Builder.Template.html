@@ -5,17 +5,17 @@
 </div>
 <section class="form-builder">
     <div class="form-builder__message form-builder__message--error container" ng-if="!!errorMessage"> 
-        <strong>There was a problem loading your form:</strong><br>
+        <strong translate>There was a problem loading your form:</strong><br>
         {{errorMessage}}
         <br>
         <br>
-        If you need help recovering the form, please contact
-        <a href="http://support.kobotoolbox.org/customer/portal/emails/new" target="_blank">KoBoToolbox support</a>.
+        <translate translate-comment="Contact Support - Part 1">If you need help recovering the form, please contact</translate>
+        <a href="http://support.kobotoolbox.org/customer/portal/emails/new" target="_blank" translate-comment="Contact Support - Part 2 - This has a link" translate>KoBoToolbox support</a><translate translate-comment="Contact Support - Part 3 - End of sentence">.</translate>
     </div>
     <div ng-show="survey_loading" class="survey-loading">
       <div class="container">
         <i class="fa fa-spinner fa-spin fa-2x fa-align-center"></i>
-        <div>Loading Form</div>
+        <div translate>Loading Form</div>
       </div>
     </div>
 </section>

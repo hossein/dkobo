@@ -1,4 +1,4 @@
-kobo.directive('itemFilters', ['$api', '$filter', '$miscUtils', function ($api, $filter, $miscUtils) {
+kobo.directive('itemFilters', ['$api', '$filter', '$miscUtils', 'gettextCatalog', function ($api, $filter, $miscUtils, gettextCatalog) {
     return {
         restrict: 'E',
         templateUrl: staticFilesUri + 'templates/ItemFilters.Template.html',
@@ -43,7 +43,9 @@ kobo.directive('itemFilters', ['$api', '$filter', '$miscUtils', function ($api, 
             }
 
             scope.delete_selected = function () {
-                if (!$miscUtils.confirm('are you sure you want to delete ' + scope.get_selected_amount() + '?')) {
+                var confirm_msg = gettextCatalog.getString('are you sure you want to delete {{one_or_more_questions}}?',
+                                                           { one_or_more_questions: scope.get_selected_amount() });
+                if (!$miscUtils.confirm(confirm_msg)) {
                     return;
                 }
                 var items =[];
@@ -111,12 +113,8 @@ kobo.directive('itemFilters', ['$api', '$filter', '$miscUtils', function ($api, 
 
             scope.get_selected_amount = function () {
                 var amount = scope.get_selected_count();
-
-                if (amount > 1 || amount === 0) {
-                    return amount + ' questions';
-                } else {
-                    return amount + ' question';
-                }
+                // `{}` as the scope makes $count automatic interpolation work.
+                return gettextCatalog.getPlural(amount, '1 question', '{{$count}} questions', {});
             };
 
         }

@@ -1,29 +1,29 @@
 /* exported ConfigurationService */
 'use strict';
 
-kobo.service('$configuration', function () {
+kobo.service('$configuration', ['gettextCatalog', function (gettextCatalog) {
     this.sections = function () {
         return [
             {
-                'title': 'Forms',
+                'title': gettextCatalog.getString('Forms'),
                 'icon': 'fa-file-text-o',
                 'name': 'forms'
             },
             {
-                'title': 'Question Library',
+                'title': gettextCatalog.getString('Question Library'),
                 'icon': 'fa-folder',
                 'name': 'library/questions'
             // },
             // {
-            //     'title': 'Admin',
+            //     'title': gettextCatalog.getString('Admin'),
             //     'icon': 'fa-cog',
             //     'name': 'admin'
             // },
             // {
-            //     'title': 'Import CSV',
+            //     'title': gettextCatalog.getString('Import CSV'),
             //     'icon': 'fa-cog',
             //     'name': 'import/csv'
             }
         ];
     };
-});
+}]);

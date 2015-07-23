@@ -6,7 +6,7 @@ temporarily disabling this template until we fix the "global tags" problem
   ng-click="enableAdd()"
   ng-show="!isAdding"
 >
-  + Add New Tag
+  + <translate>Add New Tag</translate>
 </a>
 
 <div class="tags__addnew" ng-show="isAdding">
@@ -17,7 +17,7 @@ temporarily disabling this template until we fix the "global tags" problem
     ng-keydown="addNewTag__KeyDown($event)"
     focus-on="showAddBox"
     class="tag__create-new__editbox"
-    placeholder="tag name"
+    placeholder="{{'tag name'|translate}}"
   />
 
   <i

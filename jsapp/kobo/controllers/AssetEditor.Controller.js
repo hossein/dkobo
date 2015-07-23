@@ -1,13 +1,13 @@
 /* exported AssetEditorController */
 /* global dkobo_xlform */
 'use strict';
-kobo.controller('AssetEditorController', ['$scope', '$rootScope', '$routeParams', '$routeTo', '$api', '$q', AssetEditorController]);
+kobo.controller('AssetEditorController', ['$scope', '$rootScope', '$routeParams', '$routeTo', '$api', '$q',  'gettextCatalog', AssetEditorController]);
 
-function AssetEditorController($scope, $rootScope, $routeParams, $routeTo, $api, $q) {
+function AssetEditorController($scope, $rootScope, $routeParams, $routeTo, $api, $q, gettextCatalog) {
     $rootScope.showImportButton = false;
     $rootScope.showCreateButton = false;
     var surveyDraftApi = $api.questions;
-    $rootScope.activeTab = 'Question Library > Edit question';
+    $rootScope.activeTab = gettextCatalog.getString('Question Library > Edit question');
     if($routeParams.id === 'new'){
         render_question(null);
         listTags();

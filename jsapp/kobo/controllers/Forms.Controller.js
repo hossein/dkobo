@@ -2,11 +2,11 @@
 /* global _ */
 'use strict';
 
-kobo.controller('FormsController', ['$scope', '$rootScope', '$resource', '$miscUtils', '$api', FormsController]);
-function FormsController ($scope, $rootScope, $resource, $miscUtils, $api) {
+kobo.controller('FormsController', ['$scope', '$rootScope', '$resource', '$miscUtils', '$api', 'gettextCatalog', FormsController]);
+function FormsController ($scope, $rootScope, $resource, $miscUtils, $api, gettextCatalog) {
     var formsApi = $resource('api/survey_drafts/:id', {id: '@id'});
     $scope.items_loaded = false;
-    $rootScope.add_form = '+ Add Form';
+    $rootScope.add_form = '+ ' + gettextCatalog.getString('Add Form');
 
     var load_forms = function () {
         formsApi.query(function (items) {
@@ -18,7 +18,8 @@ function FormsController ($scope, $rootScope, $resource, $miscUtils, $api) {
                 // populate "100 questions" string
                 if (currentItem.summary && !(''+currentItem !== '[Object object]') && 'rowCount' in currentItem.summary) {
                     rc = currentItem.summary.rowCount;
-                    currentItem.rowCount = '' + rc + ' question' + (rc===1 ? '' : 's');
+                    // `{}` as the scope makes $count automatic interpolation work.
+                    currentItem.rowCount = gettextCatalog.getPlural(rc, '1 question', '{{$count}} questions', {});
                 }
 
                 currentItem.date_modified = new Date(currentItem.date_modified);
@@ -37,12 +38,12 @@ function FormsController ($scope, $rootScope, $resource, $miscUtils, $api) {
         '-emptyformlist');
 
     $rootScope.canAddNew = true;
-    $rootScope.activeTab = 'Forms';
+    $rootScope.activeTab = gettextCatalog.getString('Forms');
     $rootScope.icon_link = 'forms';
 
     $scope.deleteSurvey = function (survey) {
         var id = survey.id;
-        if($miscUtils.confirm('Are you sure you want to delete this survey? The operation is not undoable.')) {
+        if($miscUtils.confirm(gettextCatalog.getString('Are you sure you want to delete this survey? The operation is not undoable.'))) {
             survey.$delete({id: survey.id}, function () {
                 $scope.infoListItems = _.filter($scope.infoListItems,
                     function (item) {
@@ -65,7 +66,7 @@ function FormsController ($scope, $rootScope, $resource, $miscUtils, $api) {
     $scope.clone_survey = function (survey) {
         var surveyDraftApi = $api.surveys;
         if (!survey.body) {
-            throw new Error("Cannot clone survey right now.");
+            throw new Error(gettextCatalog.getString("Cannot clone survey right now."));
         }
         surveyDraftApi.save({
             body: survey.body,
@@ -74,7 +75,7 @@ function FormsController ($scope, $rootScope, $resource, $miscUtils, $api) {
         }).then(function() {
             load_forms()
         }, function(response) {
-            $miscUtils.alert('a server error occurred: \n' + response.statusText, 'Error');
+            $miscUtils.alert(gettextCatalog.getString('a server error occurred:') + '\n' + response.statusText, gettextCatalog.getString('Error'));
         });
     }
 }

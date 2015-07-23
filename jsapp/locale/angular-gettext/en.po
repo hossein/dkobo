@@ -1,0 +1,402 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"X-Generator: Poedit 1.8.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: en\n"
+
+#. Contact Support - Part 3 - End of sentence
+#: jsapp/kobo/templates/Builder.Template.html:13
+msgid "."
+msgstr ""
+
+#: jsapp/kobo/controllers/Forms.Controller.js:22
+#: jsapp/kobo/directives/ItemFilters.Directive.js:117
+#: jsapp/kobo/templates/QuestionLibrary.Template.html:31
+#: jsapp/kobo/templates/QuestionLibrary.Template.html:43
+msgid "1 question"
+msgid_plural "{{$count}} questions"
+msgstr[0] ""
+msgstr[1] ""
+
+#: jsapp/kobo/templates/QuestionLibrary.Template.html:7
+msgid "1 tag"
+msgid_plural "{{$count}} tags"
+msgstr[0] ""
+msgstr[1] ""
+
+#: jsapp/kobo/controllers/Builder.Controller.js:123
+msgid ""
+"<p><strong>Your question has been saved to your question library.</strong></"
+"p><p>You can now find this question in the library sidebar on the right. To "
+"reuse it, just drag-and-drop it into any of your forms.</p><p>To edit or "
+"remove questions from your library, choose Question Library from the menu. </"
+"p>"
+msgstr ""
+
+#: jsapp/kobo/controllers/Assets.Controller.js:31
+msgctxt "Question sorter"
+msgid "A - Z"
+msgstr ""
+
+#: jsapp/kobo/controllers/Assets.Controller.js:18
+msgctxt "Tag sorter"
+msgid "A - Z"
+msgstr ""
+
+#: jsapp/kobo/controllers/Assets.Controller.js:19
+msgctxt "Tag sorter"
+msgid "A - Z, Empty First"
+msgstr ""
+
+#: jsapp/kobo/controllers/Assets.Controller.js:20
+msgctxt "Tag sorter"
+msgid "A - Z, Empty Last"
+msgstr ""
+
+#: jsapp/kobo/controllers/Forms.Controller.js:9
+#: jsapp/kobo/services/MiscUtils.Service.js:43
+#: jsapp/kobo/services/MiscUtils.Service.js:48
+msgid "Add Form"
+msgstr ""
+
+#: jsapp/kobo/templates/QuestionLibrary.Template.html:51
+msgid "Add New Question"
+msgstr ""
+
+#: jsapp/kobo/templates/ItemFilters.Template.html:46
+msgid "Add to block"
+msgstr ""
+
+#: jsapp/kobo/templates/ItemFilters.Template.html:45
+msgid "Add to new form"
+msgstr ""
+
+#: jsapp/kobo/templates/QuestionLibrary.Directive.Template.html:15
+msgid "All Tags"
+msgstr ""
+
+#: jsapp/kobo/controllers/Forms.Controller.js:46
+msgid ""
+"Are you sure you want to delete this survey? The operation is not undoable."
+msgstr ""
+
+#: jsapp/kobo/controllers/Builder.Controller.js:25
+msgid "Are you sure you want to leave?"
+msgstr ""
+
+#: jsapp/kobo/controllers/Builder.Controller.js:12
+msgid "Are you sure you want to leave? you will lose any unsaved changes."
+msgstr ""
+
+#: jsapp/kobo/directives/KobocatFormPublisher.Directive.js:69
+msgid "Cancel"
+msgstr ""
+
+#: jsapp/kobo/controllers/Forms.Controller.js:69
+msgid "Cannot clone survey right now."
+msgstr ""
+
+#: jsapp/kobo/controllers/Builder.Controller.js:102
+msgid "Cannot load survey"
+msgstr ""
+
+#: jsapp/kobo/templates/KobocatFormPublisher.Template.html:3
+msgid "Confirm the title of your project"
+msgstr ""
+
+#: jsapp/kobo/templates/KobocatFormPublisher.Template.html:4
+msgid "Confirm the unique id of your project"
+msgstr ""
+
+#. As in 'Error 691 happened. Confused? Contact us!'
+#: jsapp/kobo/templates/InfoList.Template.html:42
+msgid "Confused?"
+msgstr ""
+
+#. As in 'Error 691 happened. Confused? Contact us!'
+#: jsapp/kobo/templates/InfoList.Template.html:43
+msgid "Contact KoBoToolbox Support"
+msgstr ""
+
+#: jsapp/kobo/templates/ItemFilters.Template.html:47
+msgid "Delete"
+msgstr ""
+
+#: jsapp/kobo/directives/KobocatFormPublisher.Directive.js:14
+#: jsapp/kobo/directives/KobocatFormPublisher.Directive.js:21
+#: jsapp/kobo/directives/KobocatFormPublisher.Directive.js:64
+msgid "Deploy and View New Project"
+msgstr ""
+
+#: jsapp/kobo/templates/InfoList.Template.html:54
+msgid "Deploy as new survey project"
+msgstr ""
+
+#: jsapp/kobo/directives/KobocatFormPublisher.Directive.js:58
+#: jsapp/kobo/templates/KobocatFormPublisher.Template.html:1
+msgid "Deploy form as new survey project"
+msgstr ""
+
+#: jsapp/kobo/directives/KobocatFormPublisher.Directive.js:10
+msgid "Deploying Project"
+msgstr ""
+
+#: jsapp/kobo/controllers/Builder.Controller.js:50
+#: jsapp/kobo/controllers/Builder.Controller.js:65
+#: jsapp/kobo/controllers/Builder.Controller.js:77
+#: jsapp/kobo/controllers/Forms.Controller.js:78
+#: jsapp/kobo/services/MiscUtils.Service.js:78
+msgid "Error"
+msgstr ""
+
+#: jsapp/kobo/templates/Forms.Template.html:13
+#: jsapp/kobo/templates/InfoList.Template.html:3
+msgid "Form Drafts"
+msgstr ""
+
+#: jsapp/kobo/controllers/Header.Controller.js:8
+msgctxt "Page Title"
+msgid "Forms"
+msgstr ""
+
+#: jsapp/kobo/controllers/Header.Controller.js:13
+msgctxt "Active Tab"
+msgid "Forms"
+msgstr ""
+
+#: jsapp/kobo/controllers/Builder.Controller.js:8
+#: jsapp/kobo/controllers/Forms.Controller.js:41
+#: jsapp/kobo/services/Configuration.Service.js:8
+msgid "Forms"
+msgstr ""
+
+#. Contact Support - Part 1
+#: jsapp/kobo/templates/Builder.Template.html:12
+msgid "If you need help recovering the form, please contact"
+msgstr ""
+
+#: jsapp/kobo/controllers/Import.Controller.js:7
+msgid "Import CSV"
+msgstr ""
+
+#: jsapp/kobo/templates/Forms.Template.html:22
+#: jsapp/kobo/templates/InfoList.Template.html:9
+msgid "Import Form"
+msgstr ""
+
+#: jsapp/kobo/templates/QuestionLibrary.Template.html:47
+msgid "Import Library from XLS"
+msgstr ""
+
+#: jsapp/kobo/templates/InfoList.Template.html:40
+msgid "Important Error:"
+msgstr ""
+
+#: jsapp/kobo/templates/QuestionLibrary.Template.html:47
+msgid "Importing Questions"
+msgstr ""
+
+#: jsapp/kobo/services/MiscUtils.Service.js:61
+msgctxt "Message Title"
+msgid "Information"
+msgstr ""
+
+#: jsapp/kobo/directives/TopLevelMenu.Directive.js:16
+#: jsapp/kobo/directives/TopLevelMenu.Directive.js:22
+msgid "KoBoForm User"
+msgstr ""
+
+#. Contact Support - Part 2 - This has a link
+#: jsapp/kobo/templates/Builder.Template.html:13
+msgid "KoBoToolbox support"
+msgstr ""
+
+#: jsapp/kobo/templates/Builder.Template.html:18
+msgid "Loading Form"
+msgstr ""
+
+#: jsapp/kobo/templates/Forms.Template.html:7
+msgid "Loading Forms"
+msgstr ""
+
+#: jsapp/kobo/controllers/Assets.Controller.js:17
+msgctxt "Tag sorter"
+msgid "Newest"
+msgstr ""
+
+#: jsapp/kobo/controllers/Assets.Controller.js:29
+msgctxt "Question sorter"
+msgid "Newest First"
+msgstr ""
+
+#: jsapp/kobo/controllers/Assets.Controller.js:30
+msgctxt "Question sorter"
+msgid "Oldest First"
+msgstr ""
+
+#: jsapp/kobo/templates/ImportCSV.Template.html:3
+msgid "Paste Form Here"
+msgstr ""
+
+#: jsapp/kobo/directives/TopLevelMenu.Directive.js:30
+msgid "Projects"
+msgstr ""
+
+#: jsapp/kobo/controllers/Assets.Controller.js:49
+#: jsapp/kobo/services/Configuration.Service.js:13
+msgid "Question Library"
+msgstr ""
+
+#: jsapp/kobo/controllers/AssetEditor.Controller.js:10
+msgid "Question Library > Edit question"
+msgstr ""
+
+#: jsapp/kobo/templates/QuestionLibrary.Template.html:43
+msgid "Questions"
+msgstr ""
+
+#: jsapp/kobo/templates/InfoList.Template.html:20
+msgid "Search forms"
+msgstr ""
+
+#: jsapp/kobo/templates/ItemFilters.Template.html:5
+#: jsapp/kobo/templates/QuestionLibrary.Directive.Template.html:5
+msgid "Search questions"
+msgstr ""
+
+#: jsapp/kobo/templates/ItemFilters.Template.html:5
+msgid "Search tags"
+msgstr ""
+
+#: jsapp/kobo/templates/QuestionLibrary.Directive.Template.html:2
+msgid "Search tools"
+msgstr ""
+
+#: jsapp/kobo/templates/TopLevelMenu.Template.html:17
+msgid "Settings"
+msgstr ""
+
+#: jsapp/kobo/templates/TopLevelMenu.Template.html:23
+msgid "Sign out"
+msgstr ""
+
+#: jsapp/kobo/templates/InfoList.Template.html:25
+msgid "Sort: Last Modified"
+msgstr ""
+
+#: jsapp/kobo/templates/InfoList.Template.html:23
+msgid "Sort: Newest"
+msgstr ""
+
+#: jsapp/kobo/templates/InfoList.Template.html:24
+msgid "Sort: Oldest"
+msgstr ""
+
+#: jsapp/kobo/templates/Forms.Template.html:20
+#: jsapp/kobo/templates/InfoList.Template.html:7
+msgid "Start from Scratch"
+msgstr ""
+
+#: jsapp/kobo/templates/Forms.Template.html:25
+#: jsapp/kobo/templates/InfoList.Template.html:12
+msgid "Start from a Template"
+msgstr ""
+
+#: jsapp/kobo/controllers/Builder.Controller.js:123
+msgid "Success!"
+msgstr ""
+
+#: jsapp/kobo/directives/KobocatFormPublisher.Directive.js:24
+msgid "Survey Publishing failed:"
+msgstr ""
+
+#: jsapp/kobo/directives/KobocatFormPublisher.Directive.js:17
+msgid "Survey Publishing succeeded"
+msgstr ""
+
+#: jsapp/kobo/templates/QuestionLibrary.Template.html:7
+msgid "Tags"
+msgstr ""
+
+#: jsapp/kobo/services/MiscUtils.Service.js:82
+msgid "The server encountered an error:"
+msgstr ""
+
+#: jsapp/kobo/templates/Builder.Template.html:8
+msgid "There was a problem loading your form:"
+msgstr ""
+
+#: jsapp/kobo/services/MiscUtils.Service.js:37
+msgid "Uploading Form"
+msgstr ""
+
+#: jsapp/kobo/controllers/Builder.Controller.js:71
+msgid "Validation failed with the following errors:"
+msgstr ""
+
+#: jsapp/kobo/templates/InfoList.Template.html:62
+msgid "XLS"
+msgstr ""
+
+#: jsapp/kobo/templates/InfoList.Template.html:63
+msgid "XML"
+msgstr ""
+
+#: jsapp/kobo/templates/Forms.Template.html:17
+msgid "You currently have no forms."
+msgstr ""
+
+#: jsapp/kobo/templates/QuestionLibrary.Template.html:35
+msgid "You don't have any tags yet."
+msgstr ""
+
+#: jsapp/kobo/controllers/Assets.Controller.js:21
+msgctxt "Tag sorter"
+msgid "Z - A"
+msgstr ""
+
+#: jsapp/kobo/controllers/Assets.Controller.js:32
+msgctxt "Question sorter"
+msgid "Z - A"
+msgstr ""
+
+#: jsapp/kobo/controllers/Builder.Controller.js:64
+#: jsapp/kobo/controllers/Forms.Controller.js:78
+msgid "a server error occurred:"
+msgstr ""
+
+#: jsapp/kobo/directives/ItemFilters.Directive.js:46
+msgid "are you sure you want to delete {{one_or_more_questions}}?"
+msgstr ""
+
+#: jsapp/kobo/templates/ItemFilters.Template.html:38
+msgid "hide responses"
+msgstr ""
+
+#: jsapp/kobo/templates/ItemFilters.Template.html:29
+msgid "select all"
+msgstr ""
+
+#: jsapp/kobo/templates/ItemFilters.Template.html:39
+msgid "show responses"
+msgstr ""
+
+#: jsapp/kobo/templates/ItemFilters.Template.html:14
+msgid "sort"
+msgstr ""
+
+#: jsapp/kobo/templates/AddNewTag.Template.html:20
+msgid "tag name"
+msgstr ""
+
+#: jsapp/kobo/templates/ItemFilters.Template.html:44
+msgid "{{get_selected_amount()}} selected"
+msgstr ""

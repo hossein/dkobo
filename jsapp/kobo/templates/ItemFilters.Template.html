@@ -2,7 +2,7 @@
     <div class="{{ name }}-filter__filters">
       <div class="{{ name }}-filter__search">
         <i class="fa fa-search"></i>
-        <input id="qlib-search" class="{{ name }}-filter__searchbox" ng-model="filters.label" placeholder="Search {{ api }}" value="" />
+        <input id="qlib-search" class="{{ name }}-filter__searchbox" ng-model="filters.label" placeholder="{{api==='questions' && 'Search questions' || 'Search tags' |translate}}" dummy-searchquestionsplaceholder="{{'Search questions'|translate}}" dummy-searchtagsplaceholder="{{'Search tags'|translate}}" value="" />
       </div>
 
       <ui-select
@@ -11,7 +11,7 @@
         theme="select2"
         class="{{ name }}-filter__sorter"
       >
-        <ui-select-match placeholder="sort">
+        <ui-select-match placeholder="{{'sort'|translate}}">
             {{$select.selected.label}}
         </ui-select-match>
         <ui-select-choices repeat="item in sorter.criteria | propsFilter: {label: $select.search}">
@@ -26,7 +26,7 @@
             ng-model="select_all"
             ng-checked="allSelected()"
             ng-click="toggleSelectAll()"/>
-          select all
+          <translate>select all</translate>
       </label>
       <a
         class="{{ name }}-filter__show-responses"
@@ -35,14 +35,15 @@
         ng-click="show_responses = !show_responses"
       >
         <i class="{{ name }}-filter__show-responses-icon fa fa-eye"></i>
-        {{ show_responses && 'hide' || 'show' }} responses
+        <span ng-show='show_responses' translate>hide responses</span>
+        <span ng-show='!show_responses' translate>show responses</span>
       </a>
     </div>
 
     <div class="{{ name }}-filter__actions" ng-show="canSelectAll">
-      <div class="{{ name }}-filter__selected-count">{{get_selected_amount()}} selected</div>
-      <a class="{{ name }}-filter__add-to-new" ng-show="false" href=""><i class="{{ name }}-filter__add-to-new-icon"></i>Add to new form</a>
-      <a class="{{ name }}-filter__add-to-block" ng-show="false" href=""><i class="{{ name }}-filter__add-to-block-icon"></i>Add to block</a>
-      <a class="{{ name }}-filter__delete" ng-show="get_selected_count() > 0" href="" ng-click="delete_selected()"><i class="{{ name }}-filter__delete-icon"></i>Delete</a>
+      <div class="{{ name }}-filter__selected-count" translate>{{get_selected_amount()}} selected</div>
+      <a class="{{ name }}-filter__add-to-new" ng-show="false" href=""><i class="{{ name }}-filter__add-to-new-icon"></i><translate>Add to new form</translate></a>
+      <a class="{{ name }}-filter__add-to-block" ng-show="false" href=""><i class="{{ name }}-filter__add-to-block-icon"></i><translate>Add to block</translate></a>
+      <a class="{{ name }}-filter__delete" ng-show="get_selected_count() > 0" href="" ng-click="delete_selected()"><i class="{{ name }}-filter__delete-icon"></i><translate>Delete</translate></a>
     </div>
   </div>

@@ -1,16 +1,16 @@
 /*exported HeaderController*/
 'use strict';
 
-kobo.controller('HeaderController', ['$scope', '$rootScope', '$location', HeaderController]);
-function HeaderController($scope, $rootScope, $location) {
+kobo.controller('HeaderController', ['$scope', '$rootScope', '$location', 'gettextCatalog', HeaderController]);
+function HeaderController($scope, $rootScope, $location, gettextCatalog) {
 
     $scope.pageIconColor = 'teal';
-    $scope.pageTitle = 'Forms';
+    $scope.pageTitle = gettextCatalog.getString('Forms', null, 'Page Title');
     $scope.pageIcon = 'fa-file-text-o';
     $rootScope.isLoading = false;
 
     $rootScope.topLevelMenuActive = '';
-    $rootScope.activeTab = 'Forms';
+    $rootScope.activeTab = gettextCatalog.getString('Forms', null, 'Active Tab');
 
     $scope.toggleTopMenu = function ($event) {
         if (!!$event) {

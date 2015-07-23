@@ -3,7 +3,7 @@
 /*global log*/
 'use strict';
 
-kobo.service('$miscUtils', ['$rootScope', '$userDetails', function ($rootScope, $userDetails) {
+kobo.service('$miscUtils', ['$rootScope', '$userDetails', 'gettextCatalog', function ($rootScope, $userDetails, gettextCatalog) {
     var _this = this,
         _fileUpload,
         _successFn;
@@ -34,18 +34,18 @@ kobo.service('$miscUtils', ['$rootScope', '$userDetails', function ($rootScope, 
             add: function (e, data) {
                 // maybe display some feedback saying the upload is starting...
                 $rootScope.isLoading = true;
-                $rootScope.add_form = 'Uploading Form';
+                $rootScope.add_form = gettextCatalog.getString('Uploading Form');
                 $rootScope.$apply();
                 log(data.files[0].name + " is uploading...");
                 data.submit().success(_successFn)
                 .error(function (result) {
                     $rootScope.isLoading = false;
-                    $rootScope.add_form = '+ Add Form';
+                    $rootScope.add_form = '+ ' + gettextCatalog.getString('Add Form');
                     $rootScope.$apply();
                     _this.handleXhrError(result);
                 }).done(function () {
                     $rootScope.isLoading = false;
-                    $rootScope.add_form = '+ Add Form';
+                    $rootScope.add_form = '+ ' + gettextCatalog.getString('Add Form');
                     $rootScope.$apply();
                 });
             }
@@ -58,7 +58,7 @@ kobo.service('$miscUtils', ['$rootScope', '$userDetails', function ($rootScope, 
     };
 
     this.alert = function (message, type, jsonOpts) {
-        type = type || 'Information';
+        type = type || gettextCatalog.getString('Information', null, 'Message Title');
         if(!jsonOpts) { jsonOpts = {}; }
         var msgHtml = "<p class='miscutil__alertmessage miscutil__alertmessage--error'>" + message + "</p>";
         var warnings = jsonOpts.warnings || [];
@@ -75,10 +75,11 @@ kobo.service('$miscUtils', ['$rootScope', '$userDetails', function ($rootScope, 
     };
 
     this.handleXhrError = function (xhrResult) {
+        var errorString = gettextCatalog.getString('Error');
         if(xhrResult.responseJSON && xhrResult.responseJSON.error) {
-            _this.alert('Error: ' + xhrResult.responseJSON.error, 'Error', xhrResult.responseJSON);
+            _this.alert(errorString + ': ' + xhrResult.responseJSON.error, errorString, xhrResult.responseJSON);
         } else {
-            _this.alert('The server encountered an error: ' + xhrResult.status + ": " + xhrResult.statusText, 'Error');
+            _this.alert(gettextCatalog.getString('The server encountered an error: ') + xhrResult.status + ": " + xhrResult.statusText, errorString);
         }
     };
 

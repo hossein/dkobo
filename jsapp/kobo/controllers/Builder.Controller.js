@@ -2,14 +2,14 @@
 /* global dkobo_xlform */
 'use strict';
 
-kobo.controller('BuilderController', ['$scope', '$rootScope', '$routeParams', '$routeTo', '$miscUtils', '$userDetails', '$api', '$q', BuilderController]);
+kobo.controller('BuilderController', ['$scope', '$rootScope', '$routeParams', '$routeTo', '$miscUtils', '$userDetails', '$api', '$q', 'gettextCatalog', BuilderController]);
 
-function BuilderController($scope, $rootScope, $routeParams, $routeTo, $miscUtils, $userDetails, $api, $q) {
-    $rootScope.activeTab = 'Forms';
+function BuilderController($scope, $rootScope, $routeParams, $routeTo, $miscUtils, $userDetails, $api, $q, gettextCatalog) {
+    $rootScope.activeTab = gettextCatalog.getString('Forms');
     $scope.routeParams = $routeParams;
     var forceLeaveConfirmation = !$userDetails.debug;
     function handleUnload(event) {
-        if ($miscUtils.confirm('Are you sure you want to leave? you will lose any unsaved changes.')){
+        if ($miscUtils.confirm(gettextCatalog.getString('Are you sure you want to leave? you will lose any unsaved changes.'))){
             $rootScope.deregisterLocationChangeStart();
             $(window).unbind('beforeunload');
         } else {
@@ -22,7 +22,7 @@ function BuilderController($scope, $rootScope, $routeParams, $routeTo, $miscUtil
     if (forceLeaveConfirmation) {
         $rootScope.deregisterLocationChangeStart = $rootScope.$on('$locationChangeStart', handleUnload);
         $(window).bind('beforeunload', function(){
-            return 'Are you sure you want to leave?';
+            return gettextCatalog.getString('Are you sure you want to leave?');
         });
     }
 
@@ -47,7 +47,7 @@ function BuilderController($scope, $rootScope, $routeParams, $routeTo, $miscUtil
             try {
                 var survey = this.survey.toCSV();
             } catch (e) {
-                $miscUtils.alert(e.message, "Error");
+                $miscUtils.alert(e.message, gettextCatalog.getString("Error"));
                 throw e;
             }
             return surveyDraftApi.save({
@@ -61,19 +61,20 @@ function BuilderController($scope, $rootScope, $routeParams, $routeTo, $miscUtil
                 deferred.resolve();
                 $routeTo.forms();
             }, function(response) {
-                $miscUtils.alert('a server error occurred: \n' + response.statusText, 'Error');
+                $miscUtils.alert(gettextCatalog.getString('a server error occurred:') + '\n' + response.statusText,
+                                 gettextCatalog.getString('Error'));
                 deferred.reject();
             });
 
         } else {
             if (this.survey.errors.length) {
-                var error = 'Validation failed with the following errors:<br/>';
+                var error = gettextCatalog.getString('Validation failed with the following errors:') + '<br/>';
 
                 _.each(this.survey.errors, function (errorMessage) {
                     error += '<br/> - ' + errorMessage;
                 });
 
-                $miscUtils.alert(error, 'Error');
+                $miscUtils.alert(error, gettextCatalog.getString('Error'));
                 deferred.reject();
             }
         }
@@ -98,7 +99,7 @@ function BuilderController($scope, $rootScope, $routeParams, $routeTo, $miscUtil
                 // temporarily saving response in __djangoModelDetails
                 $scope.xlfSurvey.__djangoModelDetails = response;
             } catch (e) {
-                window.trackJs && window.trackJs.console.error("Cannot load survey", e.message);
+                window.trackJs && window.trackJs.console.error(gettextCatalog.getString("Cannot load survey"), e.message);
                 $scope.survey_loading = false;
                 $scope.errorMessage = e.message;
                 return;
@@ -119,7 +120,7 @@ function BuilderController($scope, $rootScope, $routeParams, $routeTo, $miscUtil
 
         var resource = $api.questions;
         resource.save({body: survey.toCSV(), asset_type: 'question'}).then(function () {
-            $miscUtils.alert('<p><strong>Your question has been saved to your question library.</strong></p><p>You can now find this question in the library sidebar on the right. To reuse it, just drag-and-drop it into any of your forms.</p><p>To edit or remove questions from your library, choose Question Library from the menu. </p>', 'Success!');
+            $miscUtils.alert(gettextCatalog.getString('<p><strong>Your question has been saved to your question library.</strong></p><p>You can now find this question in the library sidebar on the right. To reuse it, just drag-and-drop it into any of your forms.</p><p>To edit or remove questions from your library, choose Question Library from the menu. </p>'), gettextCatalog.getString('Success!'));
             $scope.refresh();
         });
     };

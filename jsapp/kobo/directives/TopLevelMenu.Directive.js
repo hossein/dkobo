@@ -2,7 +2,7 @@
 /* global staticFilesUri */
 'use strict';
 
-kobo.directive ('topLevelMenu', ['$userDetails', '$configuration', function ($userDetails, $configuration) {
+kobo.directive ('topLevelMenu', ['$userDetails', '$configuration', 'gettextCatalog', function ($userDetails, $configuration, gettextCatalog) {
     return {
         restrict:'A',
         templateUrl: staticFilesUri + 'templates/TopLevelMenu.Template.html',
@@ -13,13 +13,13 @@ kobo.directive ('topLevelMenu', ['$userDetails', '$configuration', function ($us
             var userDetails = $userDetails;
             if ($userDetails) {
                 scope.user = {
-                    name: userDetails.name ? userDetails.name : 'KoBoForm User',
+                    name: userDetails.name ? userDetails.name : gettextCatalog.getString('KoBoForm User'),
                     avatar: userDetails.gravatar ? userDetails.gravatar: (staticFilesUri + '/img/avatars/example-photo.jpg'),
                     username: userDetails.username
                 };
             } else {
                 scope.user = {
-                    name: 'KoBoForm User',
+                    name: gettextCatalog.getString('KoBoForm User'),
                     avatar: staticFilesUri + '/img/avatars/example-photo.jpg'
                 };
             }
@@ -27,7 +27,7 @@ kobo.directive ('topLevelMenu', ['$userDetails', '$configuration', function ($us
             var kobocatUrl = (window.koboConfigs && window.koboConfigs.kobocatServer) || 'http://kobocat.dev.kobotoolbox.org/';
             scope.kobocatLink = {
               url: kobocatUrl,
-              name: 'Projects'
+              name: gettextCatalog.getString('Projects')
             };
 
             scope.sections = $configuration.sections();

@@ -1,9 +1,9 @@
 /*exported ImportController*/
 'use strict';
 
-kobo.controller('ImportController', ['$scope', '$rootScope', '$cookies', ImportController]);
-function ImportController($scope, $rootScope, $cookies) {
+kobo.controller('ImportController', ['$scope', '$rootScope', '$cookies', 'gettextCatalog', ImportController]);
+function ImportController($scope, $rootScope, $cookies, gettextCatalog) {
     $rootScope.canAddNew = false;
-    $rootScope.activeTab = 'Import CSV';
+    $rootScope.activeTab = gettextCatalog.getString('Import CSV');
     $scope.csrfToken = $cookies.csrftoken;
 }

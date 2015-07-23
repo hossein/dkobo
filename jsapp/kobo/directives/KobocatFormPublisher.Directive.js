@@ -1,4 +1,4 @@
-kobo.directive ('kobocatFormPublisher', ['$api', '$miscUtils', '$routeTo', function ($api, $miscUtils, $routeTo) {
+kobo.directive ('kobocatFormPublisher', ['$api', '$miscUtils', '$routeTo', 'gettextCatalog', function ($api, $miscUtils, $routeTo, gettextCatalog) {
     return {
         scope: {
             item: '='
@@ -7,21 +7,21 @@ kobo.directive ('kobocatFormPublisher', ['$api', '$miscUtils', '$routeTo', funct
         link: function (scope, element, attributes) {
             var dialog = element.find('.forms__kobocat__publisher');
             scope.publish = function () {
-                var spinner = '<i class="fa fa-spin fa-spinner"></i> Deploying Project';
+                var spinner = '<i class="fa fa-spin fa-spinner"></i> ' + gettextCatalog.getString('Deploying Project');
                 $('button.save-button .ui-button-text').html(spinner);
                 $('button.save-button').addClass('save-button--deploying');
                 function success (results, headers) {
-                    $('button.save-button .ui-button-text').html('Deploy and View New Project');
+                    $('button.save-button .ui-button-text').html(gettextCatalog.getString('Deploy and View New Project'));
                     $('button.save-button').removeClass('save-button--deploying');
                     scope.close();
-                    $miscUtils.alert('Survey Publishing succeeded');
+                    $miscUtils.alert(gettextCatalog.getString('Survey Publishing succeeded'));
                     $routeTo.external(results.published_form_url);
                 }
                 function fail (response) {
-                    $('button.save-button .ui-button-text').html('Deploy and View New Project');
+                    $('button.save-button .ui-button-text').html(gettextCatalog.getString('Deploy and View New Project'));
                     $('button.save-button').removeClass('save-button--deploying');
                     scope.show_form_name_exists_message = true;
-                    scope.error_message = 'Survey Publishing failed: ' + (response.data.text || response.data.error || response.data.detail);
+                    scope.error_message = gettextCatalog.getString('Survey Publishing failed:') + ' ' + (response.data.text || response.data.error || response.data.detail);
                 }
 
                 var id = scope.form_name ? dkobo_xlform.model.utils.sluggifyLabel(scope.form_name) : '';
@@ -55,18 +55,18 @@ kobo.directive ('kobocatFormPublisher', ['$api', '$miscUtils', '$routeTo', funct
                 height: 325,
                 width: 580,
                 autoOpen: false,
-                title: 'Deploy form as new survey project',
+                title: gettextCatalog.getString('Deploy form as new survey project'),
                 draggable: false,
                 resizable: false,
                 position: { my: "center", at: "center", of: ".main" },
                 buttons: [
                     {
-                        text: "Deploy and View New Project",
+                        text: gettextCatalog.getString("Deploy and View New Project"),
                         "class": 'save-button',
                         click: scope.publish
                     },
                     {
-                        text: "Cancel",
+                        text: gettextCatalog.getString("Cancel"),
                         "class": 'cancel-button',
                         click: scope.close
                     }

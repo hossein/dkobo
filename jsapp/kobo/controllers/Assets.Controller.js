@@ -3,8 +3,8 @@
 /* global _ */
 'use strict';
 //noinspection JSUnusedGlobalSymbols
-kobo.controller('AssetsController', ['$scope', '$rootScope', '$miscUtils', '$api', '$filter', AssetsController]);
-function AssetsController($scope, $rootScope, $miscUtils, $api, $filter) {
+kobo.controller('AssetsController', ['$scope', '$rootScope', '$miscUtils', '$api', '$filter', 'gettextCatalog', AssetsController]);
+function AssetsController($scope, $rootScope, $miscUtils, $api, $filter, gettextCatalog) {
     $scope.tagFilters = {};
     $rootScope.showImportButton = false;
     $rootScope.showCreateButton = false;
@@ -14,11 +14,11 @@ function AssetsController($scope, $rootScope, $miscUtils, $api, $filter) {
     var filter = $filter('itemFilter');
     $scope.tagSorter = {
         criteria: [
-            {value: "-date_modified", label: 'Newest'},
-            {value: "label", label: 'A - Z'},
-            {value: "[count, label]", label: 'A - Z, Empty First'},
-            {value: "[-count, label]", label: 'A - Z, Empty Last'},
-            {value: '-label', label: 'Z - A'}
+            {value: "-date_modified" , label: gettextCatalog.getString('Newest'            , null, "Tag sorter")},
+            {value: "label"          , label: gettextCatalog.getString('A - Z'             , null, "Tag sorter")},
+            {value: "[count, label]" , label: gettextCatalog.getString('A - Z, Empty First', null, "Tag sorter")},
+            {value: "[-count, label]", label: gettextCatalog.getString('A - Z, Empty Last' , null, "Tag sorter")},
+            {value: '-label'         , label: gettextCatalog.getString('Z - A'             , null, "Tag sorter")}
         ]
     };
 
@@ -26,10 +26,10 @@ function AssetsController($scope, $rootScope, $miscUtils, $api, $filter) {
 
     $scope.questionSorter = {
         criteria: [
-            {value: '-date_modified', label: 'Newest First'},
-            {value: 'date_modified', label: 'Oldest First'},
-            {value: 'label', label: 'A - Z'},
-            {value: '-label', label: 'Z - A'}
+            {value: '-date_modified', label: gettextCatalog.getString('Newest First', null, "Question sorter")},
+            {value: 'date_modified' , label: gettextCatalog.getString('Oldest First', null, "Question sorter")},
+            {value: 'label'         , label: gettextCatalog.getString('A - Z'       , null, "Question sorter")},
+            {value: '-label'        , label: gettextCatalog.getString('Z - A'       , null, "Question sorter")}
         ]
     };
 
@@ -46,7 +46,7 @@ function AssetsController($scope, $rootScope, $miscUtils, $api, $filter) {
 
 
     $rootScope.canAddNew = true;
-    $rootScope.activeTab = 'Question Library';
+    $rootScope.activeTab = gettextCatalog.getString('Question Library');
 
     $rootScope.$on('list:library_assets', function () {
         $scope.toggleTagInFilters($api.tags.items);
