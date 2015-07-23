@@ -116,9 +116,11 @@ define 'cs!xlform/view.utils', ['xlform/view.utils.validator'], (Validator)->
     launch = (opts={})->
       wrap = $("<div>", class: "js-click-remove-iframe iframe-bg-shade")
       $("<div>").text("""
-        Launch question library in this element
+        %1
         <section koboform-question-library=""></section>
-      """).appendTo(wrap)
+        """
+        .replace("%1", gettext("Launch question library in this element"))
+      ).appendTo(wrap)
       wrap.click ()-> wrap.remove()
       wrap
 
@@ -152,7 +154,11 @@ define 'cs!xlform/view.utils', ['xlform/view.utils.validator'], (Validator)->
       $(".enketo-holder").remove()
 
     launch.fromCsv = (surveyCsv, options={})->
-      holder = $("<div>", class: "enketo-holder").html("<div class='enketo-iframe-icon'></div><div class=\"enketo-loading-message\"><p><i class=\"fa fa-spin fa-spinner\"></i><br/>Loading Preview</p><p>This will take a few seconds depending on the size of your form.</p></div>")
+      holder = $("<div>", class: "enketo-holder").html("""
+        <div class='enketo-iframe-icon'></div><div class=\"enketo-loading-message\"><p><i class=\"fa fa-spin fa-spinner\"></i><br/>%1</p><p>%2</p></div>"""
+        .replace("%1", gettext("Loading Preview"))
+        .replace("%2", gettext("This will take a few seconds depending on the size of your form.")))
+      
       wrap = $("<div>", class: "js-click-remove-iframe iframe-bg-shade")
       holder.appendTo('body')
       wrap.appendTo('body')
@@ -186,7 +192,7 @@ define 'cs!xlform/view.utils', ['xlform/view.utils.validator'], (Validator)->
             informative_message = jqhr.responseText or jqhr.statusText
             if informative_message.split("\n").length > 0
               informative_message = informative_message.split("\n")[0..2].join("<br>")
-            onError informative_message, title: 'Error launching preview'
+            onError informative_message, title: gettext('Error launching preview')
           else if response and response.error
             wrap.remove()
             holder.remove()

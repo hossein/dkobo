@@ -17,12 +17,13 @@ define 'cs!xlform/model.base', [
   _.extend validation.validators, {
     invalidChars: (value, attr, customValue)->
       unless $viewUtils.Validator.__validators.invalidChars(value, customValue)
-        "#{value} contains invalid characters";
+        pgettext('Do not translate #{value}',
+                 '#{value} contains invalid characters').replace('#{value}', value);
     unique: (value, attr, customValue, model)->
       rows = model.getSurvey().rows.pluck(model.key)
       values = _.map(rows, (rd)-> rd.get('value'))
       unless $viewUtils.Validator.__validators.unique(value, values)
-        "Question name isn't unique"
+        gettext("Question name isn't unique")
       else
         ``
   }

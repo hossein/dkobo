@@ -6,102 +6,102 @@ define 'cs!xlform/view.icons', [
 
   iconDetails = [
     # row 1
-      label: "Select One"
+      label: pgettext("Question Type Icon Label", "Select One")
       faClass: "dot-circle-o"
       grouping: "r1"
       id: "select_one"
     ,
-      label: "Select Many"
+      label: pgettext("Question Type Icon Label", "Select Many")
       faClass: "list-ul"
       grouping: "r1"
       id: "select_multiple"
     ,
-      label: "Text"
+      label: pgettext("Question Type Icon Label", "Text")
       faClass: "lato-text"
       grouping: "r1"
       id: "text"
     ,
-      label: "Number"
+      label: pgettext("Question Type Icon Label", "Number")
       faClass: "lato-integer"
       grouping: "r1"
       id: "integer"
     ,
 
     # row 2
-      label: "Decimal"
+      label: pgettext("Question Type Icon Label", "Decimal")
       faClass: "lato-decimal"
       grouping: "r2"
       id: "decimal"
     ,
-      label: "Date"
+      label: pgettext("Question Type Icon Label", "Date")
       faClass: "calendar"
       grouping: "r2"
       id: "date"
     ,
-      label: "Time"
+      label: pgettext("Question Type Icon Label", "Time")
       faClass: "clock-o"
       grouping: "r2"
       id: "time"
     ,
-      label: "Date & time"
+      label: pgettext("Question Type Icon Label", "Date & time")
       faClass: "calendar clock-over"
       grouping: "r2"
       id: "datetime"
     ,
 
     # r3
-      label: "GPS"
+      label: pgettext("Question Type Icon Label", "GPS")
       faClass: "map-marker"
       grouping: "r3"
       id: "geopoint"
     ,
-      label: "Photo"
+      label: pgettext("Question Type Icon Label", "Photo")
       faClass: "picture-o"
       grouping: "r3"
       id: "image"
     ,
-      label: "Audio"
+      label: pgettext("Question Type Icon Label", "Audio")
       faClass: "volume-up"
       grouping: "r3"
       id: "audio"
     ,
-      label: "Video"
+      label: pgettext("Question Type Icon Label", "Video")
       faClass: "video-camera"
       grouping: "r3"
       id: "video"
     ,
 
     # r4
-      label: "Note"
+      label: pgettext("Question Type Icon Label", "Note")
       faClass: "bars"
       grouping: "r4"
       id: "note"
     ,
-      label: "Barcode"
+      label: pgettext("Question Type Icon Label", "Barcode")
       faClass: "barcode"
       grouping: "r4"
       id: "barcode"
     ,
-      label: "Acknowledge"
+      label: pgettext("Question Type Icon Label", "Acknowledge")
       faClass: "check-square-o"
       grouping: "r4"
       id: "acknowledge"
     ,
-      label: "Calculate"
+      label: pgettext("Question Type Icon Label", "Calculate")
       faClass: "lato-calculate"
       grouping: "r4"
       id: "calculate"
     ,
 
     # r5
-      label: "Matrix / Rating"
+      label: pgettext("Question Type Icon Label", "Matrix / Rating")
       # faClass: "server"
       # will look better but isn't available until FA 4.3
       faClass: "th"
       grouping: "r5"
       id: "score"
     ,
-      label: "Ranking"
+      label: pgettext("Question Type Icon Label", "Ranking")
       faClass: "sort-amount-desc"
       grouping: "r5"
       id: "rank"

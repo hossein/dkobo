@@ -27,9 +27,10 @@ define 'cs!xlform/view.rowSelector.templates', [], ()->
       <div class="row__questiontypes row__questiontypes--namer">
         <form class="row__questiontypes__form" action="javascript:void(0);" >
           <input type="text" class="js-cancel-sort" />
-          <button> + Add Question </button>
+          <button> + %1 </button>
         </form>
       </div>
     """
+    .replace("%1", gettext("Add Question"))
 
   xlfRowSelector

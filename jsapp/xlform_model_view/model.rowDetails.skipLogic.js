@@ -372,7 +372,7 @@ rowDetailsSkipLogic.IntegerResponseModel = (function(_super) {
     IntegerResponseModel.prototype.validation = {
         value: {
             pattern: /^-?\d+$/,
-            msg: 'Number must be integer'
+            msg: gettext('Number must be integer')
         }
     };
 
@@ -399,7 +399,7 @@ rowDetailsSkipLogic.DecimalResponseModel = (function(_super) {
     DecimalResponseModel.prototype.validation = {
         value: {
             pattern: 'number',
-            msg: 'Number must be decimal'
+            msg: gettext('Number must be decimal')
         }
     };
 

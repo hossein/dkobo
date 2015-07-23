@@ -408,8 +408,8 @@ define 'cs!xlform/mv.skipLogicHelpers', [
     serialize: () ->
       return ''
     constructor: (view_factory, @context) ->
-      @criterion_builder_button = view_factory.create_button '<i class="fa fa-plus"></i> Add a condition', 'skiplogic__button skiplogic__select-builder'
-      @handcode_button = view_factory.create_button '<i>${}</i> Manually enter your skip logic in XLSForm code', 'skiplogic__button skiplogic__select-handcode'
+      @criterion_builder_button = view_factory.create_button '<i class="fa fa-plus"></i> ' + gettext('Add a condition'), 'skiplogic__button skiplogic__select-builder'
+      @handcode_button = view_factory.create_button '<i>${}</i> ' + gettext('Manually enter your skip logic in XLSForm code'), 'skiplogic__button skiplogic__select-handcode'
       ###@view = @view_factory.create_skip_logic_picker_view(context)###
     switch_editing_mode: () -> return
 
@@ -553,10 +553,10 @@ define 'cs!xlform/mv.skipLogicHelpers', [
     {
       id: 1
       type: 'existence'
-      label: 'Was Answered'
-      negated_label: 'Was not Answered'
-      abbreviated_label: 'Was Answered'
-      abbreviated_negated_label: 'Was not Answered'
+      label: gettext('Was Answered')
+      negated_label: gettext('Was not Answered')
+      abbreviated_label: pgettext('abbreviated', 'Was Answered')
+      abbreviated_negated_label: pgettext('abbreviated', 'Was not Answered')
       parser_name: ['ans_notnull','ans_null']
       symbol: {
         ans_notnull: '!=',
@@ -568,7 +568,7 @@ define 'cs!xlform/mv.skipLogicHelpers', [
       id: 2
       type: 'equality'
       label: ''
-      negated_label: 'not'
+      negated_label: pgettext('Negated equality', 'not')
       abbreviated_label: '='
       abbreviated_negated_label: '!='
       parser_name: ['resp_equals', 'resp_notequals', 'multiplechoice_selected', 'multiplechoice_notselected']
@@ -582,8 +582,8 @@ define 'cs!xlform/mv.skipLogicHelpers', [
     {
       id: 3
       type: 'equality'
-      label: 'Greater Than'
-      negated_label: 'Less Than'
+      label: gettext('Greater Than')
+      negated_label: gettext('Less Than')
       abbreviated_label: '>'
       abbreviated_negated_label: '<'
       parser_name: ['resp_greater', 'resp_less']
@@ -595,8 +595,8 @@ define 'cs!xlform/mv.skipLogicHelpers', [
     {
       id: 4
       type: 'equality'
-      label: 'Greater Than or Equal to'
-      negated_label: 'Less Than or Equal to'
+      label: gettext('Greater Than or Equal to')
+      negated_label: gettext('Less Than or Equal to')
       abbreviated_label: '>='
       abbreviated_negated_label: '<='
       parser_name: ['resp_greaterequals', 'resp_lessequals']

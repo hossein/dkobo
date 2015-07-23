@@ -31,7 +31,8 @@ define 'cs!xlform/view.choices', [
           new OptionView(model: option, cl: @model).render().$el.appendTo @ul
         if i == 0
           while i < 2
-            @addEmptyOption("Option #{++i}")
+            @addEmptyOption(pgettext("E.g Option 1, Option 2, etc", 
+                                     "Option %1").replace("%1", ++i))
 
         @$el.removeClass("hidden")
       else
@@ -53,7 +54,8 @@ define 'cs!xlform/view.choices', [
       btn = $($viewTemplates.$$render('xlfListView.addOptionButton'))
       btn.click ()=>
         i = @model.options.length
-        @addEmptyOption("Option #{i+1}")
+        @addEmptyOption(pgettext("E.g Option 1, Option 2, etc", 
+                                 "Option %1").replace("%1", i+1))
 
       @$el.append(btn)
       @
@@ -88,17 +90,20 @@ define 'cs!xlform/view.choices', [
       @t = $("<i class=\"fa fa-trash-o js-remove-option\">")
       @pw = $("<div class=\"editable-wrapper js-cancel-select-row\">")
       @p = $("<span class=\"js-cancel-select-row\">")
-      @c = $("<code><label>Value:</label> <span class=\"js-cancel-select-row\">AUTOMATIC</span></code>")
+      @c = $("<code><label>%1</label> <span class=\"js-cancel-select-row\">%2</span></code>"
+             .replace("%1", gettext("Value:")).replace("%2", gettext("AUTOMATIC")));
       @d = $('<div>')
       if @model
-        @p.html @model.get("label") || 'Empty'
+        @p.html @model.get("label") || gettext('Empty')
         @$el.attr("data-option-id", @model.cid)
         $('span', @c).html @model.get("name")
         @model.set('setManually', true)
       else
         @model = new $choices.Option()
         @options.cl.options.add(@model)
-        @p.html("Option #{1+@options.i}").addClass("preliminary")
+        optionText = pgettext("E.g Option 1, Option 2, etc",
+                              "Option %1").replace("%1", 1+@options.i)
+        @p.html(optionText).addClass("preliminary")
 
       $viewUtils.makeEditable @, @model, @p, edit_callback: _.bind @saveValue, @
       @n = $('span', @c)
@@ -109,7 +114,7 @@ define 'cs!xlform/view.choices', [
         if val is ''
           @model.unset('name')
           @model.set('setManually', false)
-          val = 'AUTOMATIC'
+          val = gettext('AUTOMATIC')
           @$el.trigger("choice-list-update", @options.cl.cid)
         else
           val = $modelUtils.sluggify(val, {

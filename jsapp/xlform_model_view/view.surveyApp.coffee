@@ -322,7 +322,8 @@ define 'cs!xlform/view.surveyApp', [
       if @features.displayTitle
         $viewUtils.makeEditable @, @survey.settings, '.form-title', property:'form_title', options: validate: (value) ->
           if value.length > 255
-            return "Length cannot exceed 255 characters, is " + value.length + " characters."
+            return gettext("Length cannot exceed 255 characters, is %1 characters.")
+                   .replace("%1", value.length)
           return
 
       $inps = {}
@@ -401,12 +402,12 @@ define 'cs!xlform/view.surveyApp', [
     set_multioptions_label: () ->
       $expand_multioptions = @$(".js-expand-multioptions--all")
       if @expand_all_multioptions()
-        $expand_multioptions.html($expand_multioptions.html().replace("Show", "Hide"));
+        $expand_multioptions.html($expand_multioptions.html().replace(gettext("Show"), gettext("Hide")));
         icon = $expand_multioptions.find('i')
         icon.removeClass('fa-caret-right')
         icon.addClass('fa-caret-down')
       else
-        $expand_multioptions.html($expand_multioptions.html().replace("Hide", "Show"));
+        $expand_multioptions.html($expand_multioptions.html().replace(gettext("Hide"), gettext("Show")));
         icon = $expand_multioptions.find('i')
         icon.removeClass('fa-caret-down')
         icon.addClass('fa-caret-right')
@@ -594,7 +595,7 @@ define 'cs!xlform/view.surveyApp', [
 
     clickRemoveRow: (evt)->
       evt.preventDefault()
-      if confirm("Are you sure you want to delete this question? This action cannot be undone.")
+      if confirm(gettext("Are you sure you want to delete this question? This action cannot be undone."))
         $et = $(evt.target)
         rowEl = $et.parents(".survey__row").eq(0)
         rowId = rowEl.data("rowId")
@@ -676,7 +677,7 @@ define 'cs!xlform/view.surveyApp', [
       return
 
     alert: (message, opts={}) ->
-      title = opts.title or 'Error'
+      title = opts.title or gettext('Error')
       $('.alert-modal').html(message).dialog('option', {
         title: title,
         width: 500,

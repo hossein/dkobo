@@ -12,9 +12,9 @@ define 'cs!xlform/view.row.templates', [], ()->
       <section class="card__settings  row-extras row-extras--depr">
         <i class="card__settings-close fa fa-times js-toggle-card-settings"></i>
         <ul class="card__settings__tabs">
-          <li class="heading"><i class="fa fa-cog"></i> Settings</li>
-          <li data-card-settings-tab-id="all" class="card__settings__tabs__tab--active">All group settings</li>
-          <li data-card-settings-tab-id="skip-logic" class="">Skip Logic</li>
+          <li class="heading"><i class="fa fa-cog"></i> %1</li>
+          <li data-card-settings-tab-id="all" class="card__settings__tabs__tab--active">%2</li>
+          <li data-card-settings-tab-id="skip-logic" class="">%3</li>
         </ul>
         <div class="card__settings__content">
           <div class="card__settings__fields card__settings__fields--active card__settings__fields--all">
@@ -23,16 +23,19 @@ define 'cs!xlform/view.row.templates', [], ()->
         </div>
       </section>
     """
+    .replace("%1", gettext("Settings"))
+    .replace("%2", gettext("All group settings"))
+    .replace("%3", gettext("Skip Logic"))
   rowSettingsView = ()->
     """
       <section class="card__settings  row-extras row-extras--depr">
         <i class="card__settings-close fa fa-times js-toggle-card-settings"></i>
         <ul class="card__settings__tabs">
-          <li class="heading"><i class="fa fa-cog"></i> Settings</li>
-          <li data-card-settings-tab-id="question-options" class="card__settings__tabs__tab--active">Question Options</li>
-          <li data-card-settings-tab-id="skip-logic" class="">Skip Logic</li>
-          <li data-card-settings-tab-id="validation-criteria" class="">Validation Criteria</li>
-          <li data-card-settings-tab-id="response-type" class="card__settings__tab--response-type">Response Type</li>
+          <li class="heading"><i class="fa fa-cog"></i> %1</li>
+          <li data-card-settings-tab-id="question-options" class="card__settings__tabs__tab--active">%2</li>
+          <li data-card-settings-tab-id="skip-logic" class="">%3</li>
+          <li data-card-settings-tab-id="validation-criteria" class="">%4</li>
+          <li data-card-settings-tab-id="response-type" class="card__settings__tab--response-type">%5</li>
         </ul>
         <div class="card__settings__content">
           <ul class="card__settings__fields card__settings__fields--active card__settings__fields--question-options">
@@ -49,6 +52,11 @@ define 'cs!xlform/view.row.templates', [], ()->
         </div>
       </section>
     """
+    .replace("%1", gettext("Settings"))
+    .replace("%2", gettext("Question Options"))
+    .replace("%3", gettext("Skip Logic"))
+    .replace("%4", gettext("Validation Criteria"))
+    .replace("%5", gettext("Response Type"))
 
   xlfRowView = (surveyView) ->
       template = """
@@ -104,8 +112,8 @@ define 'cs!xlform/view.row.templates', [], ()->
         autoname_class = "scorecell__name--automatic"
         autoname_attr = """data-automatic-name="#{col.autoname}" """
       namecell = """
-        <p class="scorecell__name #{autoname_class}" #{autoname_attr} contenteditable="true" title="Option value">#{col.name or ''}</p>
-      """
+        <p class="scorecell__name #{autoname_class}" #{autoname_attr} contenteditable="true" title="%1">#{col.name or ''}</p>
+      """.replace("%1", gettext("Option value"))
       cols.push """
         <th class="scorecell__col" data-cid="#{col.cid}">
           <span class="scorecell__label" contenteditable="true">#{col.label}</span><button class="scorecell__delete js-delete-scorecol">&times;</button>
@@ -122,8 +130,9 @@ define 'cs!xlform/view.row.templates', [], ()->
         autoname_attr = """data-automatic-name="#{row.autoname}" """
 
       scorelabel__name = """
-        <span class="scorelabel__name #{autoname_class}" #{autoname_attr} contenteditable="true" title="Row name">#{row.name or ''}</span>
+        <span class="scorelabel__name #{autoname_class}" #{autoname_attr} contenteditable="true" title="%1">#{row.name or ''}</span>
       """
+      .replace("%1", gettext("Row name"))
 
       """
       <tr data-row-cid="#{row.cid}">
@@ -188,13 +197,14 @@ define 'cs!xlform/view.row.templates', [], ()->
     rank_constraint_message_html = """
     <li class="rank_items__constraint_wrap">
       <p class="rank_items__constraint_explanation">
-        A constraint message to be read in case of error:
+        %1
       </p>
       <p class="rank_items__constraint_message">
         #{template_args.rank_constraint_msg}
       </p>
     </li>
     """
+    .replace("%1", gettext("A constraint message to be read in case of error:"))
 
     rank_constraint_message_li = """
       #{rank_constraint_message_html}
@@ -231,11 +241,13 @@ define 'cs!xlform/view.row.templates', [], ()->
   rowErrorView = (atts)->
     """
     <div class="card card--error">
-      Row could not be displayed: <pre>#{atts}</pre>
-      <em>This question could not be imported. Please re-create it manually. Please contact us at <a href="mailto:support@kobotoolbox.org">support@kobotoolbox.org</a> so we can fix this bug!</em>
+      %1 <pre>#{atts}</pre>
+      <em>%2</em>
     </div>
     #{expandingSpacerHtml}
     """
+    .replace("%1", gettext("Row could not be displayed:"))
+    .replace("%2", gettext("This question could not be imported. Please re-create it manually. Please contact us at <a href=\"mailto:support@kobotoolbox.org\">support@kobotoolbox.org</a> so we can fix this bug!"))
 
   xlfRowView: xlfRowView
   expandChoiceList: expandChoiceList

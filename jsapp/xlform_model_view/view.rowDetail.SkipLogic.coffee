@@ -25,17 +25,23 @@ define 'cs!xlform/view.rowDetail.SkipLogic', [
       tempId = _.uniqueId("skiplogic_expr")
       @$el.html("""
         <p>
-          This question will only be displayed if the following conditions apply
+          %1
         </p>
         <div class="skiplogic__criterialist"></div>
         <p class="skiplogic__addnew">
-          <button class="skiplogic__addcriterion">+ Add another condition</button>
+          <button class="skiplogic__addcriterion">+ %2</button>
         </p>
         <select class="skiplogic__delimselect">
-          <option value="and">Question should match all of these criteria</option>
-          <option value="or">Question should match any of these criteria</option>
+          <option value="and">%3</option>
+          <option value="or">%4</option>
         </select>
-      """)
+      """
+      #IMPORTANT: "This question will..." also appears at view.rowDetail.ValidationLogic.coffee.
+      #           The two English texts must remain IDENTICAL.
+      .replace("%1", gettext("This question will only be displayed if the following conditions apply"))
+      .replace("%2", gettext("Add another condition"))
+      .replace("%3", gettext("Question should match all of these criteria"))
+      .replace("%4", gettext("Question should match any of these criteria")))
 
       delimSelect = @$(".skiplogic__delimselect").val(@criterion_delimiter)
       delimSelect.children('[value=' + @criterion_delimiter + ']').attr('selected', 'selected')
@@ -287,7 +293,7 @@ define 'cs!xlform/view.rowDetail.SkipLogic', [
           value: row.cid
           text: row.getValue("label")
 
-        options.unshift value: -1, text: 'Select question from list'
+        options.unshift value: -1, text: gettext('Select question from list')
         model.set 'options', options
 
       set_options()

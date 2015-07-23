@@ -258,7 +258,7 @@ define 'cs!xlform/model.survey', [
         required: true
         invalidChars: '`'
     defaults:
-      form_title: "New form"
+      form_title: pgettext("New form title", "New Form")
       form_id: "new_form"
     toCsvJson: ->
       columns = _.keys(@attributes)

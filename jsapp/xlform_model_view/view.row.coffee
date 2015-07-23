@@ -138,7 +138,7 @@ define 'cs!xlform/view.row', [
 
     deleteGroup: (evt)=>
       skipConfirm = $(evt.currentTarget).hasClass('js-force-delete-group')
-      if skipConfirm or confirm('Are you sure you want to split apart this group?')
+      if skipConfirm or confirm(gettext('Are you sure you want to split apart this group?'))
         @_deleteGroup()
       evt.preventDefault()
 
@@ -186,7 +186,7 @@ define 'cs!xlform/view.row', [
           $appearanceField.find('input:checkbox').prop('checked', false)
           appearanceModel = @model.get('appearance')
           if appearanceModel.getValue()
-            @surveyView.ngScope.miscUtils.alert("You can't display nested groups on the same screen - the setting has been removed from the parent group")
+            @surveyView.ngScope.miscUtils.alert(gettext("You can't display nested groups on the same screen - the setting has been removed from the parent group"))
           appearanceModel.set('value', '')
 
       @model.on 'remove', (row) =>
@@ -252,7 +252,7 @@ define 'cs!xlform/view.row', [
       super(args)
       beta_elem = $('<p>', {
               class: 'scorerank-beta-warning'
-              text: 'Note: Rank and Matrix question types are currently in beta.'
+              text: gettext('Note: Rank and Matrix question types are currently in beta.')
               })
       while @model._scoreChoices.options.length < 2
         @model._scoreChoices.options.add(label: 'Option')
@@ -268,7 +268,7 @@ define 'cs!xlform/view.row', [
 
       if @model._scoreRows.length < 1
         @model._scoreRows.add
-          label: 'Enter your question'
+          label: gettext('Enter your question')
           name: ''
 
       score_rows = for sr in @model._scoreRows.models
@@ -381,7 +381,7 @@ define 'cs!xlform/view.row', [
       super(args)
       beta_elem = $('<p>', {
                     class: 'scorerank-beta-warning'
-                    text: 'Note: Rank and Matrix question types are currently in beta.'
+                    text: gettext('Note: Rank and Matrix question types are currently in beta.')
                     })
       template_args = {}
       template_args.rank_constraint_msg = @model.get('kobo--rank-constraint-message')?.get('value')
@@ -392,7 +392,7 @@ define 'cs!xlform/view.row', [
 
       while @model._rankLevels.options.length < min_rank_levels_count
         @model._rankLevels.options.add
-          label: "Item to be ranked"
+          label: gettext("Item to be ranked")
           name: ''
 
       rank_levels = for model in @model._rankLevels.options.models
@@ -409,7 +409,7 @@ define 'cs!xlform/view.row', [
 
       while @model._rankRows.length < 1
         @model._rankRows.add
-          label: '1st choice'
+          label: gettext('1st choice')
           name: ''
 
       rank_rows = for model in @model._rankRows.models
@@ -495,7 +495,7 @@ define 'cs!xlform/view.row', [
       offOn 'click.addrow', '.rank_items__add', (evt)=>
         if $(evt.target).parents('.rank__rows').length is 0
           # add a level
-          @model._rankLevels.options.add({label: 'Item', name: ''})
+          @model._rankLevels.options.add({label: gettext('Item'), name: ''})
         else
           chz = "1st 2nd 3rd".split(' ')
           # Please don't go up to 21

@@ -106,7 +106,7 @@ define 'cs!xlform/view.rowSelector', [
       @question_name = @line.find('input').val()
       $('select.skiplogic__rowselect').select2('destroy')
       rowType = $(evt.target).closest('.questiontypelist__item').data("menuItem")
-      value = (@question_name || 'New Question').replace(/\t/g, ' ')
+      value = (@question_name || gettext('New Question')).replace(/\t/g, ' ')
 
       rowDetails =
         type: rowType

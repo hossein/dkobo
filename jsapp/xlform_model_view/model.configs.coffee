@@ -16,65 +16,65 @@ define 'cs!xlform/model.configs', ["underscore", 'cs!xlform/model.utils', "backb
   configs.defaultSurveyDetails =
     start_time:
       name: "start"
-      label: "start time"
-      description: "Records when the survey was begun"
+      label: gettext("Start Time")
+      description: gettext("Records when the survey was begun")
       default: true
       asJson:
         type: "start"
         name: "start"
     end_time:
       name: "end"
-      label: "end time"
-      description: "tecords when the survey was marked as completed"
+      label: gettext("End Time")
+      description: gettext("Records when the survey was marked as completed")
       default: true
       asJson:
         type: "end"
         name: "end"
     today:
       name: "today"
-      label: "today"
-      description: "includes today's date"
+      label: gettext("Today")
+      description: gettext("Includes today's date")
       default: false
       asJson:
         type: "today"
         name: "today"
     username:
       name: "username"
-      label: "username"
-      description: "includes interviewer's username"
+      label: gettext("Username")
+      description: gettext("Includes interviewer's username")
       default: false
       asJson:
         type: "username"
         name: "username"
     simserial:
       name: "simserial"
-      label: "sim serial"
-      description: "records the serial number of the network sim card"
+      label: gettext("SIM Serial")
+      description: gettext("Records the serial number of the network SIM card")
       default: false
       asJson:
         type: "simserial"
         name: "simserial"
     subscriberid:
       name: "subscriberid"
-      label: "subscriber id"
-      description: "records the subscriber id of the sim card"
+      label: gettext("Subscriber ID")
+      description: gettext("Records the subscriber ID of the SIM card")
       default: false
       asJson:
         type: "subscriberid"
         name: "subscriberid"
     deviceid:
       name: "deviceid"
-      label: "device id"
+      label: gettext("Device ID")
       aliases: ["imei"]
-      description: "Records the internal device ID number (works on Android phones)"
+      description: gettext("Records the internal device ID number, a.k.a IMEI (works on Android phones)")
       default: false
       asJson:
         type: "deviceid"
         name: "deviceid"
     phoneNumber:
       name: "phonenumber"
-      label: "phone number"
-      description: "Records the device's phone number, when available"
+      label: gettext("Phone Number")
+      description: gettext("Records the device's phone number, when available")
       default: false
       asJson:
         type: "phonenumber"
@@ -102,79 +102,79 @@ define 'cs!xlform/model.configs', ["underscore", 'cs!xlform/model.utils', "backb
   configs.defaultsForType =
     geopoint:
       label:
-        value: "Record your current location"
+        value: gettext("Record your current location")
       required:
         value: false
         _hideUnlessChanged: true
     image:
       label:
-        value: "Point and shoot! Use the camera to take a photo"
+        value: gettext("Point and shoot! Use the camera to take a photo")
     video:
       label:
-        value: "Use the camera to record a video"
+        value: gettext("Use the camera to record a video")
     audio:
       label:
-        value: "Use the camera's microphone to record a sound"
+        value: gettext("Use the camera's microphone to record a sound")
     note:
       label:
-        value: "This note can be read out loud"
+        value: gettext("This note can be read out loud")
       required:
         value: false
         _hideUnlessChanged: true
     integer:
       label:
-        value: "Enter a number"
+        value: gettext("Enter a number")
     barcode:
       label:
-        value: "Use the camera to scan a barcode"
+        value: gettext("Use the camera to scan a barcode")
     decimal:
       label:
-        value: "Enter a number"
+        value: gettext("Enter a number")
     date:
       label:
-        value: "Enter a date"
+        value: gettext("Enter a date")
     calculate:
       calculation:
         value: ""
       label:
-        value: "calculation"
+        value: pgettext("Row default value", "Calculation")
       required:
         value: false
         _hideUnlessChanged: true
     datetime:
       label:
-        value: "Enter a date and time"
+        value: gettext("Enter a date and time")
     time:
       label:
-        value: "Enter a time"
+        value: gettext("Enter a time")
     acknowledge:
       label:
-        value: "Acknowledge"
+        value: pgettext("Imperative sentence for row default value", "Acknowledge")
 
   configs.columns = ["type", "name", "label", "hint", "required", "relevant", "default", "constraint"]
 
   configs.lookupRowType = do->
     typeLabels = [
-      ["note", "Note", preventRequired: true],
-      ["acknowledge", "Acknowledge"],
-      ["text", "Text"], # expects text
-      ["integer", "Integer"], #e.g. 42
-      ["decimal", "Decimal"], #e.g. 3.14
-      ["geopoint", "Geopoint (GPS)"], # Can use satelite GPS coordinates
-      ["image", "Image", isMedia: true], # Can use phone camera, for example
-      ["barcode", "Barcode"], # Can scan a barcode using the phone camera
-      ["date", "Date"], #e.g. (4 July, 1776)
-      ["time", "Time"], #e.g. (4 July, 1776)
-      ["datetime", "Date and Time"], #e.g. (2012-Jan-4 3:04PM)
-      ["audio", "Audio", isMedia: true], # Can use phone microphone to record audio
-      ["video", "Video", isMedia: true], # Can use phone camera to record video
-      ["calculate", "Calculate"],
-      ["select_one", "Select", orOtherOption: true, specifyChoice: true],
-      ["score", "Score"],
-      ["score__row", "Score Row"],
-      ["rank", "Rank"],
-      ["rank__level", "Rank Level"],
-      ["select_multiple", "Multiple choice", orOtherOption: true, specifyChoice: true]
+      ["note",            pgettext("Type Label", "Note")            , preventRequired: true],
+      ["acknowledge",     pgettext("Type Label", "Acknowledge")],
+      ["text",            pgettext("Type Label", "Text")           ], # expects text
+      ["integer",         pgettext("Type Label", "Integer")        ], #e.g. 42
+      ["decimal",         pgettext("Type Label", "Decimal")        ], #e.g. 3.14
+      ["geopoint",        pgettext("Type Label", "Geopoint (GPS)") ], # Can use satelite GPS coordinates
+      ["image",           pgettext("Type Label", "Image")           , isMedia: true], # Can use phone camera, for example
+      ["barcode",         pgettext("Type Label", "Barcode")        ], # Can scan a barcode using the phone camera
+      ["date",            pgettext("Type Label", "Date")           ], #e.g. (4 July, 1776)
+      ["time",            pgettext("Type Label", "Time")           ], #e.g. (4 July, 1776)
+      ["datetime",        pgettext("Type Label", "Date and Time")  ], #e.g. (2012-Jan-4 3:04PM)
+      ["audio",           pgettext("Type Label", "Audio")           , isMedia: true], # Can use phone microphone to record audio
+      ["video",           pgettext("Type Label", "Video")           , isMedia: true], # Can use phone camera to record video
+      ["calculate",       pgettext("Type Label", "Calculate")      ],
+      ["select_one",      pgettext("Type Label", "Select")          , orOtherOption: true, specifyChoice: true],
+      ["score",           pgettext("Type Label", "Score")          ],
+      ["score__row",      pgettext("Type Label", "Score Row")      ],
+      ["rank",            pgettext("Type Label", "Rank")           ],
+      ["rank__level",     pgettext("Type Label", "Rank Level")     ],
+      ["select_multiple", pgettext("Type Label", "Multiple choice") , orOtherOption: true, specifyChoice: true]
     ]
 
     class Type
@@ -204,7 +204,7 @@ define 'cs!xlform/model.configs', ["underscore", 'cs!xlform/model.utils', "backb
     name:
       value: ""
     label:
-      value: "new question"
+      value: pgettext("New Question Label", "New Question")
     type:
       value: "text"
     hint:
@@ -234,7 +234,7 @@ define 'cs!xlform/model.configs', ["underscore", 'cs!xlform/model.utils', "backb
       value: ->
         "group_#{$utils.txtid()}"
     label:
-      value: "Group"
+      value: pgettext("New Group Label", "Group")
 
     type:
       value: "group"

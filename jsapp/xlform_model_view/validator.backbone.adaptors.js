@@ -8,7 +8,8 @@ _.extend(Backbone.Validation.validators, {
         if(viewUtils.Validator.__validators.invalidChars(value, customValue)){
             return;
         }
-        return value + 'contains invalid characters';
+        return pgettext('Do not translate #{value}',
+                        '#{value} contains invalid characters').replace('#{value}', value);
     },
     unique: function (value, attr, customValue, model) {
         var rows = model.getSurvey().rows.pluck(model.key);
@@ -22,6 +23,6 @@ _.extend(Backbone.Validation.validators, {
         if(viewUtils.Validator.__validators.unique(value, values)) {
             return;
         }
-        return "Question name isn't unique";
+        return gettext("Question name isn't unique");
     }
 });

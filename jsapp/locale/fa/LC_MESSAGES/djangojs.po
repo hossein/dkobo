@@ -1,0 +1,757 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-23 09:51+0000\n"
+"PO-Revision-Date: 2015-07-15 19:07+0330\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: kobo.compiled/dkobo_xlform.js:1310
+msgid "Launch question library in this element"
+msgstr "کتابخانه سؤالات روی این عنصر اجرا شود"
+
+#: kobo.compiled/dkobo_xlform.js:1365
+msgid "Loading Preview"
+msgstr "در حال آماده‌سازی پیش‌نمایش"
+
+#: kobo.compiled/dkobo_xlform.js:1365
+msgid "This will take a few seconds depending on the size of your form."
+msgstr "این کار بسته به حجم فرم شما چندین ثانیه طول می‌کشد."
+
+#: kobo.compiled/dkobo_xlform.js:1412
+msgid "Error launching preview"
+msgstr "خطا در اجرای پیش‌نمایش"
+
+#: kobo.compiled/dkobo_xlform.js:1802
+msgid "Start Time"
+msgstr "زمان آغاز"
+
+#: kobo.compiled/dkobo_xlform.js:1803
+msgid "Records when the survey was begun"
+msgstr "زمان شروع جمع‌آوری داده را ذخیره می‌کند"
+
+#: kobo.compiled/dkobo_xlform.js:1812
+msgid "End Time"
+msgstr "زمان پایان"
+
+#: kobo.compiled/dkobo_xlform.js:1813
+msgid "Records when the survey was marked as completed"
+msgstr "زمانی که کامل‌شدن جمع‌آوری داده ثبت می‌شود را ذخیره می‌کند"
+
+#: kobo.compiled/dkobo_xlform.js:1822
+msgid "Today"
+msgstr "امروز"
+
+#: kobo.compiled/dkobo_xlform.js:1823
+msgid "Includes today's date"
+msgstr "تاریخ امروز را ذخیره می‌کند"
+
+#: kobo.compiled/dkobo_xlform.js:1832
+msgid "Username"
+msgstr "نام کاربری"
+
+#: kobo.compiled/dkobo_xlform.js:1833
+msgid "Includes interviewer's username"
+msgstr "نام کاربری شخص جمع‌آوری‌کننده‌ی داده را ذخیره می‌کند"
+
+#: kobo.compiled/dkobo_xlform.js:1842
+msgid "SIM Serial"
+msgstr "سریال سیم‌کارت"
+
+#: kobo.compiled/dkobo_xlform.js:1843
+msgid "Records the serial number of the network SIM card"
+msgstr "سریال سیم‌کارت شبکه‌ی همراه را ذخیره می‌کند"
+
+#: kobo.compiled/dkobo_xlform.js:1852
+msgid "Subscriber ID"
+msgstr "شناسه مشترک"
+
+#: kobo.compiled/dkobo_xlform.js:1853
+msgid "Records the subscriber ID of the SIM card"
+msgstr "شناسه‌ی مشترک سیم‌کارت را ذخیره می‌کند"
+
+#: kobo.compiled/dkobo_xlform.js:1862
+msgid "Device ID"
+msgstr "شناسه دستگاه"
+
+#: kobo.compiled/dkobo_xlform.js:1864
+msgid ""
+"Records the internal device ID number, a.k.a IMEI (works on Android phones)"
+msgstr "شناسه داخلی دستگاه (IMEI) را ذخیره می‌کند (روی آندروید)"
+
+#: kobo.compiled/dkobo_xlform.js:1873
+msgid "Phone Number"
+msgstr "شماره تلفن"
+
+#: kobo.compiled/dkobo_xlform.js:1874
+msgid "Records the device's phone number, when available"
+msgstr "شماره تلفن دستگاه کاربر را، وقتی موجود باشد، ذخیره می‌کند"
+
+#: kobo.compiled/dkobo_xlform.js:1945
+msgid "Record your current location"
+msgstr "موقعیت فعلی خود را ثبت کنید"
+
+#: kobo.compiled/dkobo_xlform.js:1954
+msgid "Point and shoot! Use the camera to take a photo"
+msgstr "با استفاده از دوربین عکس بگیرید"
+
+#: kobo.compiled/dkobo_xlform.js:1959
+msgid "Use the camera to record a video"
+msgstr "با استفاده از دوربین فیلم ضبط کنید"
+
+#: kobo.compiled/dkobo_xlform.js:1964
+msgid "Use the camera's microphone to record a sound"
+msgstr "با استفاده از میکروفون دوربین، صدایی ضبط کنید"
+
+#: kobo.compiled/dkobo_xlform.js:1969
+msgid "This note can be read out loud"
+msgstr "این یادداشت می‌تواند با صدای بلند خوانده‌شود"
+
+#: kobo.compiled/dkobo_xlform.js:1978 kobo.compiled/dkobo_xlform.js.c:1988
+msgid "Enter a number"
+msgstr "عددی را وارد نمایید"
+
+#: kobo.compiled/dkobo_xlform.js:1983
+msgid "Use the camera to scan a barcode"
+msgstr "با استفاده از دوربین بارکد را اسکن کنید"
+
+#: kobo.compiled/dkobo_xlform.js:1993
+msgid "Enter a date"
+msgstr "تاریخ را وارد نمایید"
+
+#: kobo.compiled/dkobo_xlform.js:2001
+msgctxt "Row default value"
+msgid "Calculation"
+msgstr "محاسبه"
+
+#: kobo.compiled/dkobo_xlform.js:2010
+msgid "Enter a date and time"
+msgstr "تاریخ و زمان را وارد نمایید"
+
+#: kobo.compiled/dkobo_xlform.js:2015
+msgid "Enter a time"
+msgstr "زمان را وارد نمایید"
+
+#: kobo.compiled/dkobo_xlform.js:2020
+msgctxt "Imperative sentence for row default value"
+msgid "Acknowledge"
+msgstr "تأیید کنید"
+
+#: kobo.compiled/dkobo_xlform.js:2030
+msgctxt "Type Label"
+msgid "Note"
+msgstr "یادداشت"
+
+#: kobo.compiled/dkobo_xlform.js:2033
+msgctxt "Type Label"
+msgid "Acknowledge"
+msgstr "تأیید"
+
+#: kobo.compiled/dkobo_xlform.js:2033
+msgctxt "Type Label"
+msgid "Text"
+msgstr "متن"
+
+#: kobo.compiled/dkobo_xlform.js:2033
+msgctxt "Type Label"
+msgid "Integer"
+msgstr "عدد صحیح"
+
+#: kobo.compiled/dkobo_xlform.js:2033
+msgctxt "Type Label"
+msgid "Decimal"
+msgstr "عدد اعشاری"
+
+#: kobo.compiled/dkobo_xlform.js:2033
+msgctxt "Type Label"
+msgid "Geopoint (GPS)"
+msgstr "موقعیت (GPS)"
+
+#: kobo.compiled/dkobo_xlform.js:2034
+msgctxt "Type Label"
+msgid "Image"
+msgstr "تصویر"
+
+#: kobo.compiled/dkobo_xlform.js:2037
+msgctxt "Type Label"
+msgid "Barcode"
+msgstr "بارکد"
+
+#: kobo.compiled/dkobo_xlform.js:2037
+msgctxt "Type Label"
+msgid "Date"
+msgstr "تاریخ"
+
+#: kobo.compiled/dkobo_xlform.js:2037
+msgctxt "Type Label"
+msgid "Time"
+msgstr "زمان"
+
+#: kobo.compiled/dkobo_xlform.js:2037
+msgctxt "Type Label"
+msgid "Date and Time"
+msgstr "تاریخ و زمان"
+
+#: kobo.compiled/dkobo_xlform.js:2038
+msgctxt "Type Label"
+msgid "Audio"
+msgstr "صوت"
+
+#: kobo.compiled/dkobo_xlform.js:2042
+msgctxt "Type Label"
+msgid "Video"
+msgstr "ویدیو"
+
+#: kobo.compiled/dkobo_xlform.js:2045
+msgctxt "Type Label"
+msgid "Calculate"
+msgstr "محاسبات"
+
+#: kobo.compiled/dkobo_xlform.js:2046
+msgctxt "Type Label"
+msgid "Select"
+msgstr "انتخاب"
+
+#: kobo.compiled/dkobo_xlform.js:2050
+msgctxt "Type Label"
+msgid "Score"
+msgstr "امتیاز"
+
+#: kobo.compiled/dkobo_xlform.js:2050
+msgctxt "Type Label"
+msgid "Score Row"
+msgstr "ردیف امتیاز"
+
+#: kobo.compiled/dkobo_xlform.js:2050
+msgctxt "Type Label"
+msgid "Rank"
+msgstr "رتبه"
+
+#: kobo.compiled/dkobo_xlform.js:2050
+msgctxt "Type Label"
+msgid "Rank Level"
+msgstr "سطح رتبه"
+
+#: kobo.compiled/dkobo_xlform.js:2051
+msgctxt "Type Label"
+msgid "Multiple choice"
+msgstr "چندگزینه‌ای"
+
+#: kobo.compiled/dkobo_xlform.js:2112
+msgctxt "New Question Label"
+msgid "New Question"
+msgstr "سؤال جدید"
+
+#: kobo.compiled/dkobo_xlform.js:2153
+msgctxt "New Group Label"
+msgid "Group"
+msgstr "گروه"
+
+#: kobo.compiled/dkobo_xlform.js:2802
+msgid "Add a condition"
+msgstr "افزودن یک شرط"
+
+#: kobo.compiled/dkobo_xlform.js:2803
+msgid "Manually enter your skip logic in XLSForm code"
+msgstr "قواعد پرش شرطی به زبان XLSForm وارد شود"
+
+#: kobo.compiled/dkobo_xlform.js:2918
+msgid "Was Answered"
+msgstr "پاسخ‌داده‌شده"
+
+#: kobo.compiled/dkobo_xlform.js:2919
+msgid "Was not Answered"
+msgstr "پاسخ‌داده‌نشده"
+
+#: kobo.compiled/dkobo_xlform.js:2920
+msgctxt "abbreviated"
+msgid "Was Answered"
+msgstr "دارای‌پاسخ"
+
+#: kobo.compiled/dkobo_xlform.js:2921
+msgctxt "abbreviated"
+msgid "Was not Answered"
+msgstr "بدون‌پاسخ"
+
+#: kobo.compiled/dkobo_xlform.js:2932
+msgctxt "Negated equality"
+msgid "not"
+msgstr "نامساوی با"
+
+#: kobo.compiled/dkobo_xlform.js:2945
+msgid "Greater Than"
+msgstr "بیشتر از"
+
+#: kobo.compiled/dkobo_xlform.js:2946
+msgid "Less Than"
+msgstr "کمتر از"
+
+#: kobo.compiled/dkobo_xlform.js:2957
+msgid "Greater Than or Equal to"
+msgstr "بیشتر یا مساوی با"
+
+#: kobo.compiled/dkobo_xlform.js:2958
+msgid "Less Than or Equal to"
+msgstr "کمتر یا مساوی با"
+
+#: kobo.compiled/dkobo_xlform.js:3347
+#: xlform_model_view/model.rowDetails.skipLogic.js:375
+msgid "Number must be integer"
+msgstr "عدد باید صحیح باشد"
+
+#: kobo.compiled/dkobo_xlform.js:3374
+#: xlform_model_view/model.rowDetails.skipLogic.js:402
+msgid "Number must be decimal"
+msgstr "عدد باید اعشاری باشد"
+
+#: kobo.compiled/dkobo_xlform.js:3702 kobo.compiled/dkobo_xlform.js.c:4596
+msgid "This question will only be displayed if the following conditions apply"
+msgstr "این پرسش تنها در صورتی نمایش داده خواهد شد که شرایط زیر صدق کنند"
+
+#: kobo.compiled/dkobo_xlform.js:3702
+msgid "Add another condition"
+msgstr "افزودن شرط"
+
+#: kobo.compiled/dkobo_xlform.js:3702
+msgid "Question should match all of these criteria"
+msgstr "تمام این شرایط باید براورده شوند"
+
+#: kobo.compiled/dkobo_xlform.js:3702
+msgid "Question should match any of these criteria"
+msgstr "یکی یا بیشتر از این شرایط باید براورده شود"
+
+#: kobo.compiled/dkobo_xlform.js:4111
+msgid "Select question from list"
+msgstr "سؤالی را از لیست انتخاب کنید"
+
+#: kobo.compiled/dkobo_xlform.js:4338
+msgid "Manually enter your validation logic in XLSForm code"
+msgstr "قواعد اعتبار سنجی به زبان XLSForm وارد شود"
+
+#: kobo.compiled/dkobo_xlform.js:4596
+msgid "This question will be valid only if the following conditions apply"
+msgstr "این پرسش تنها در صورتی اعتبار خواهد داشت که شرایط زیر صدق کنند"
+
+#: kobo.compiled/dkobo_xlform.js:4607
+msgid "This question's response has to be"
+msgstr "پاسخ این پرسش می‌بایست"
+
+#: kobo.compiled/dkobo_xlform.js:4731
+#: xlform_model_view/validator.backbone.adaptors.js:12
+msgctxt "Do not translate #{value}"
+msgid "#{value} contains invalid characters"
+msgstr "#{value} دارای کاراکترهای غیرمجاز است"
+
+#: kobo.compiled/dkobo_xlform.js:4742
+#: xlform_model_view/validator.backbone.adaptors.js:26
+msgid "Question name isn't unique"
+msgstr "نام پرسش یکتا نیست"
+
+#: kobo.compiled/dkobo_xlform.js:5687
+msgctxt "Rank item selection"
+msgid "Items cannot be selected more than once"
+msgstr "هر مورد نمی‌تواند بیش از یک بار انتخاب شود"
+
+#: kobo.compiled/dkobo_xlform.js:8070
+msgctxt "New form title"
+msgid "New Form"
+msgstr "فرم جدید"
+
+#: kobo.compiled/dkobo_xlform.js:8142
+msgid "Click to add another response..."
+msgstr "افزودن پاسخ جدید..."
+
+#: kobo.compiled/dkobo_xlform.js:8142 kobo.compiled/dkobo_xlform.js.c:9020
+msgid "Value:"
+msgstr "مقدار:"
+
+#: kobo.compiled/dkobo_xlform.js:8142 kobo.compiled/dkobo_xlform.js.c:9020
+#: kobo.compiled/dkobo_xlform.js:9048
+msgid "AUTOMATIC"
+msgstr "خودکار"
+
+#: kobo.compiled/dkobo_xlform.js:8158 kobo.compiled/dkobo_xlform.js.c:8161
+msgid "Settings"
+msgstr "تنظیمات"
+
+#: kobo.compiled/dkobo_xlform.js:8158
+msgid "All group settings"
+msgstr "تمام تنظیمات گروه"
+
+#: kobo.compiled/dkobo_xlform.js:8158 kobo.compiled/dkobo_xlform.js.c:8161
+msgid "Skip Logic"
+msgstr "پرش شرطی"
+
+#: kobo.compiled/dkobo_xlform.js:8161
+msgid "Question Options"
+msgstr "تنظیمات سؤال"
+
+#: kobo.compiled/dkobo_xlform.js:8161
+msgid "Validation Criteria"
+msgstr "قواعد اعتبارسنجی"
+
+#: kobo.compiled/dkobo_xlform.js:8161
+msgid "Response Type"
+msgstr "نوع پاسخ"
+
+#: kobo.compiled/dkobo_xlform.js:8193
+msgid "Option value"
+msgstr "مقدار این گزینه"
+
+#: kobo.compiled/dkobo_xlform.js:8211
+msgid "Row name"
+msgstr "نام ردیف"
+
+#: kobo.compiled/dkobo_xlform.js:8259
+msgid "A constraint message to be read in case of error:"
+msgstr "پیامی که هنگام خطا نمایش داده‌شود:"
+
+#: kobo.compiled/dkobo_xlform.js:8270
+msgid "Row could not be displayed:"
+msgstr "ردیف نمی‌تواند نمایش داده‌شود:"
+
+#: kobo.compiled/dkobo_xlform.js:8270
+#, fuzzy
+msgid ""
+"This question could not be imported. Please re-create it manually. Please "
+"contact us at <a href=\"mailto:support@kobotoolbox.org\">support@kobotoolbox."
+"org</a> so we can fix this bug!"
+msgstr ""
+"این سؤال قابلیت ورود به سیستم ندارد. لطفاً آن را مجدداً دستی وارد نمایید.در "
+"صورتی که اشکالی وجود دارد با ما تماس بگیرید."
+
+#: kobo.compiled/dkobo_xlform.js:8311
+msgid "Add Question"
+msgstr "افزودن سؤال"
+
+#: kobo.compiled/dkobo_xlform.js:8324
+msgid "Start from Scratch"
+msgstr "طراحی از ابتدا"
+
+#: kobo.compiled/dkobo_xlform.js:8324
+msgid "or"
+msgstr "یا"
+
+#: kobo.compiled/dkobo_xlform.js:8324
+msgid "Import XLS"
+msgstr "واردنمودن فایل اکسل"
+
+#: kobo.compiled/dkobo_xlform.js:8332
+msgid "Form"
+msgstr "فرم"
+
+#: kobo.compiled/dkobo_xlform.js:8334
+msgid "Question"
+msgstr "سؤال"
+
+#: kobo.compiled/dkobo_xlform.js:8336
+msgctxt "#{type_name} can be Form, Question"
+msgid "Save and Exit #{type_name}"
+msgstr "ذخیره #{type_name} و خروج"
+
+#: kobo.compiled/dkobo_xlform.js:8337
+msgctxt "#{type_name} can be Form, Question"
+msgid "Preview #{type_name}"
+msgstr "پیش‌نمایش #{type_name}"
+
+#: kobo.compiled/dkobo_xlform.js:8348
+msgid "Form Settings"
+msgstr "تنظیمات فرم"
+
+#: kobo.compiled/dkobo_xlform.js:8348
+msgid "Show All Responses"
+msgstr "نمایش تمام گزینه‌ها"
+
+#: kobo.compiled/dkobo_xlform.js:8348
+msgid "Group Questions"
+msgstr "گروه‌بندی سؤالات"
+
+#: kobo.compiled/dkobo_xlform.js:8348
+msgid "Question Library"
+msgstr "کتابخانه‌ی سؤالات"
+
+#: kobo.compiled/dkobo_xlform.js:8348
+msgid "Form ID"
+msgstr "شناسه‌ی فرم"
+
+#: kobo.compiled/dkobo_xlform.js:8348
+msgid "Unique form name"
+msgstr "نام یکتای فرم"
+
+#: kobo.compiled/dkobo_xlform.js:8348
+#, fuzzy
+msgid "Web form style (Optional)"
+msgstr "نگارش (اختیاری)"
+
+#: kobo.compiled/dkobo_xlform.js:8348
+msgid "This allows using different Enketo styles, e.g. 'theme-grid'"
+msgstr ""
+
+#: kobo.compiled/dkobo_xlform.js:8348
+msgid "(empty)"
+msgstr "(خالی)"
+
+#: kobo.compiled/dkobo_xlform.js:8348
+msgid "theme-grid"
+msgstr ""
+
+#: kobo.compiled/dkobo_xlform.js:8348
+msgid "Version (Optional)"
+msgstr "نگارش (اختیاری)"
+
+#: kobo.compiled/dkobo_xlform.js:8348
+msgid "A version ID of the form"
+msgstr "یک شناسه‌ی نگارش (ورژن) برای فرم"
+
+#: kobo.compiled/dkobo_xlform.js:8348
+msgid "Hidden meta questions to include in your form to help with analysis"
+msgstr "شبه‌سؤالاتی برای گنجاندن در فرم که به تحلیل نتایج کمک می‌کنند"
+
+#: kobo.compiled/dkobo_xlform.js:8348
+msgid "Meta questions for collecting with cell phones"
+msgstr "شبه‌سؤالاتی برای جمع‌آوری داده با گوشی‌های هوشمند"
+
+#: kobo.compiled/dkobo_xlform.js:8348
+msgid "Manual submission URL (advanced)"
+msgstr "آدرس ارسال نتایج دستی (پیشرفته)"
+
+#: kobo.compiled/dkobo_xlform.js:8348
+msgid "The specific server instance where the data should go to - optional"
+msgstr "سروری که داده‌ها باید به آن فرستاده شوند - اختیاری"
+
+#: kobo.compiled/dkobo_xlform.js:8348
+msgid "Public Key"
+msgstr "کلید عمومی"
+
+#: kobo.compiled/dkobo_xlform.js:8348
+msgid "The encryption key used for secure forms - optional"
+msgstr "کلید رمزنگاری که برای فرم‌های امن استفاده می‌شود - اختیاری"
+
+#: kobo.compiled/dkobo_xlform.js:8348
+msgid "This form is currently empty."
+msgstr "این فرم در حال حاضر خالی است."
+
+#: kobo.compiled/dkobo_xlform.js:8348
+msgid ""
+"You can add questions, notes, prompts, or other fields by clicking on the \"+"
+"\" sign below."
+msgstr ""
+"شما می‌توانید با کلیک روی دکمه \"+\" زیر، پرسش‌ها، یادداشت‌ها، پیام‌ها و فیلدهای "
+"دیگری را بیفزایید."
+
+#: kobo.compiled/dkobo_xlform.js:8531
+msgctxt "Question Type Icon Label"
+msgid "Select One"
+msgstr "انتخاب گزینه"
+
+#: kobo.compiled/dkobo_xlform.js:8536
+msgctxt "Question Type Icon Label"
+msgid "Select Many"
+msgstr "چندگزینه‌ای"
+
+#: kobo.compiled/dkobo_xlform.js:8541
+msgctxt "Question Type Icon Label"
+msgid "Text"
+msgstr "متنی"
+
+#: kobo.compiled/dkobo_xlform.js:8546
+msgctxt "Question Type Icon Label"
+msgid "Number"
+msgstr "عدد صحیح"
+
+#: kobo.compiled/dkobo_xlform.js:8551
+msgctxt "Question Type Icon Label"
+msgid "Decimal"
+msgstr "عدد اعشاری"
+
+#: kobo.compiled/dkobo_xlform.js:8556
+msgctxt "Question Type Icon Label"
+msgid "Date"
+msgstr "تاریخ"
+
+#: kobo.compiled/dkobo_xlform.js:8561
+msgctxt "Question Type Icon Label"
+msgid "Time"
+msgstr "زمان"
+
+#: kobo.compiled/dkobo_xlform.js:8566
+msgctxt "Question Type Icon Label"
+msgid "Date & time"
+msgstr "تاریخ و زمان"
+
+#: kobo.compiled/dkobo_xlform.js:8571
+msgctxt "Question Type Icon Label"
+msgid "GPS"
+msgstr "موقعیت GPS"
+
+#: kobo.compiled/dkobo_xlform.js:8576
+msgctxt "Question Type Icon Label"
+msgid "Photo"
+msgstr "تصویر"
+
+#: kobo.compiled/dkobo_xlform.js:8581
+msgctxt "Question Type Icon Label"
+msgid "Audio"
+msgstr "صوت"
+
+#: kobo.compiled/dkobo_xlform.js:8586
+msgctxt "Question Type Icon Label"
+msgid "Video"
+msgstr "ویدیو"
+
+#: kobo.compiled/dkobo_xlform.js:8591
+msgctxt "Question Type Icon Label"
+msgid "Note"
+msgstr "یادداشت"
+
+#: kobo.compiled/dkobo_xlform.js:8596
+msgctxt "Question Type Icon Label"
+msgid "Barcode"
+msgstr "بارکد"
+
+#: kobo.compiled/dkobo_xlform.js:8601
+msgctxt "Question Type Icon Label"
+msgid "Acknowledge"
+msgstr "تأیید"
+
+#: kobo.compiled/dkobo_xlform.js:8606
+msgctxt "Question Type Icon Label"
+msgid "Calculate"
+msgstr "محاسبات"
+
+#: kobo.compiled/dkobo_xlform.js:8611
+msgctxt "Question Type Icon Label"
+msgid "Matrix / Rating"
+msgstr "ماتریس/دسته‌بندی"
+
+#: kobo.compiled/dkobo_xlform.js:8616
+msgctxt "Question Type Icon Label"
+msgid "Ranking"
+msgstr "رتبه‌دهی"
+
+#: kobo.compiled/dkobo_xlform.js:8826
+msgid "New Question"
+msgstr "سؤال جدید"
+
+#: kobo.compiled/dkobo_xlform.js:8914 kobo.compiled/dkobo_xlform.js.c:8942
+#: kobo.compiled/dkobo_xlform.js:9030
+msgctxt "E.g Option 1, Option 2, etc"
+msgid "Option %1"
+msgstr "گزینه %1"
+
+#: kobo.compiled/dkobo_xlform.js:9023
+msgid "Empty"
+msgstr "خالی"
+
+#: kobo.compiled/dkobo_xlform.js:9366
+msgid "Question hint"
+msgstr "راهنمای سؤال"
+
+#: kobo.compiled/dkobo_xlform.js:9375
+msgid "Error Message"
+msgstr "پیام خطا"
+
+#: kobo.compiled/dkobo_xlform.js:9416
+msgid "Data column name"
+msgstr "نام ستون داده"
+
+#: kobo.compiled/dkobo_xlform.js:9447
+msgid "Default response"
+msgstr "پاسخ پیشفرض"
+
+#: kobo.compiled/dkobo_xlform.js:9464
+msgid "Repeat"
+msgstr "تکرار"
+
+#: kobo.compiled/dkobo_xlform.js:9464
+msgid "Repeat this group if necessary"
+msgstr "تکرار این گروه در صورت نیاز"
+
+#: kobo.compiled/dkobo_xlform.js:9473
+msgid "Mandatory response"
+msgstr "پاسخ اجباری"
+
+#: kobo.compiled/dkobo_xlform.js:9498 kobo.compiled/dkobo_xlform.js.c:9504
+#: kobo.compiled/dkobo_xlform.js:9506
+msgid "Appearance (advanced)"
+msgstr "طرز نمایش (پیشرفته)"
+
+#: kobo.compiled/dkobo_xlform.js:9498
+msgid "Show all questions in this group on the same screen"
+msgstr "تمام سؤالات این گروه در یک صفحه نمایش‌داده‌شوند"
+
+#: kobo.compiled/dkobo_xlform.js:9773
+msgid "Are you sure you want to split apart this group?"
+msgstr "آیا مطمئن هستید می‌خواهید این گروه را تقسیم کنید؟"
+
+#: kobo.compiled/dkobo_xlform.js:9843
+msgid ""
+"You can't display nested groups on the same screen - the setting has been "
+"removed from the parent group"
+msgstr ""
+"شما نمی‌توانید گروه‌های تودرتو را در یک صفحه نمایش دهید. این تنظیم از گروه "
+"والد حذف‌شده‌است."
+
+#: kobo.compiled/dkobo_xlform.js:9980 kobo.compiled/dkobo_xlform.js.c:10194
+msgid "Note: Rank and Matrix question types are currently in beta."
+msgstr "نکته: سؤالات ماتریس/دسته‌بندی و رتبه‌دهی امکانات آزمایشی هستند."
+
+#: kobo.compiled/dkobo_xlform.js:10009
+msgid "Enter your question"
+msgstr "پرسش خود را وارد کنید"
+
+#: kobo.compiled/dkobo_xlform.js:10204
+msgid "Item to be ranked"
+msgstr "مورد برای رتبه‌دهی"
+
+#: kobo.compiled/dkobo_xlform.js:10231
+msgid "1st choice"
+msgstr "انتخاب اول"
+
+#: kobo.compiled/dkobo_xlform.js:10358
+msgid "Item"
+msgstr "مورد"
+
+#: kobo.compiled/dkobo_xlform.js:10808
+msgid "Length cannot exceed 255 characters, is %1 characters."
+msgstr "طول نباید از ۲۵۵ کاراکتر بیشتر شود، ولی %1 کاراکتر وارد شده‌است."
+
+#: kobo.compiled/dkobo_xlform.js:10918 kobo.compiled/dkobo_xlform.js.c:10923
+msgid "Show"
+msgstr "نمایش"
+
+#: kobo.compiled/dkobo_xlform.js:10918 kobo.compiled/dkobo_xlform.js.c:10923
+msgid "Hide"
+msgstr "پنهان کردن"
+
+#: kobo.compiled/dkobo_xlform.js:11174
+msgid ""
+"Are you sure you want to delete this question? This action cannot be undone."
+msgstr ""
+"آیا مطمئن هستید می‌خواهید این پرسش را پاک کنید؟ این عمل غیر قابل بازگردانی "
+"است."
+
+#: kobo.compiled/dkobo_xlform.js:11295
+msgid "Error"
+msgstr "خطا"
+
+#~ msgid "Appearance (Optional)"
+#~ msgstr "طرز نمایش (اختیاری)"
+
+#~ msgid "Example: 'field-list'"
+#~ msgstr "مثال: لیست فیلدها"
+
+#~ msgid "field-list"
+#~ msgstr "لیست فیلدها"

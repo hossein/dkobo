@@ -17,13 +17,19 @@ define 'cs!xlform/view.rowDetail.ValidationLogic', [
   class viewRowDetailValidationLogic.ValidationLogicCriterionBuilder extends $skipLogicView.SkipLogicCriterionBuilderView
     render: () ->
       super
-      @$el.html(@$el.html().replace 'only be displayed', 'be valid only')
+      @$el.html(@$el.html().replace(
+        #IMPORTANT: The FIRST "This question will..." also appears at view.rowDetail.SkipLogic.coffee.
+        #           The two English texts in both files must remain IDENTICAL, as this file will
+        #           replace it with something else.
+        gettext("This question will only be displayed if the following conditions apply")
+        gettext("This question will be valid only if the following conditions apply")
+      ))
 
       @
 
   class viewRowDetailValidationLogic.ValidationLogicQuestionPicker extends $viewWidgets.Label
     constructor: () ->
-      super("This question's response has to be")
+      super(gettext("This question's response has to be"))
     attach_to: (target) ->
       target.find('.skiplogic__rowselect').remove()
       super(target)
