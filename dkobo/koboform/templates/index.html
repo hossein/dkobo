@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="{% static 'components/angular-ui-select/dist/select.css' %}" media="all">
     <link rel="stylesheet" href="{% static 'components/jquery.tagsinput/jquery.tagsinput.css' %}" media="all">
     <link rel="stylesheet" href="{% static 'kobo.compiled/kobo.css' %}" media="all">
+    {% endcompress %}
     
     {% with 'css/i18n_'|add:LANGUAGE_CODE|add:'.css' as i18n_css %}
       <link rel="stylesheet" href="{% static i18n_css %}" media="all">
@@ -39,7 +40,6 @@
     {% if LANGUAGE_BIDI %}
       <link rel="stylesheet" href="{% static 'css/rtl.css' %}" media="all">
     {% endif %}
-    {% endcompress %}
 
     <script src="{% static 'kobo.compiled/modernizr.js' %}"></script>
 
@@ -137,13 +137,14 @@
     <script src="{% static 'kobo/app_run.js' %}"></script>
     
     <script src="{% static 'kobo/translations.js' %}"></script>
-    <script type="text/javascript">
-        angular.module('dkobo').run(function (gettextCatalog) {
-            gettextCatalog.setCurrentLanguage('{{ LANGUAGE_CODE }}');
-        });
-    </script>
 
     {% endcompress %}
+
+    <script type="text/javascript">
+        angular.module('dkobo').run(['gettextCatalog', function (gettextCatalog) {
+            gettextCatalog.setCurrentLanguage('{{ LANGUAGE_CODE }}');
+        }]);
+    </script>
 
   </head>
 
